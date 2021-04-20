@@ -6,3 +6,8 @@ sec3 L.10
     even though I require utils.js its its variables are not avalible to app.js and it goes both ways. they are locally scoped
 
     this is why we use module.exports
+
+L.11 Importing Npm Modules
+    npm i validator
+    node does not support the this keyword
+
