@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.1",
+    "text-to-speech-js": "^1.1.10",
     "validator": "^10.8.0"
   }
 }

@@ -14,3 +14,7 @@ L.11 Importing Npm Modules
 L.12 Printing in color exercize
     install and use chalk from npm
 
+L.13 Global npm modules and nodemon
+    npm i nodemon -g
+    in the file directory run nodemon 'file.name'  instead of node
+
