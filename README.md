@@ -11,3 +11,6 @@ L.11 Importing Npm Modules
     npm i validator
     node does not support the this keyword
 
+L.12 Printing in color exercize
+    install and use chalk from npm
+
