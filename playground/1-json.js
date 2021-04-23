@@ -30,4 +30,3 @@ fs.writeFileSync('1-json.json',  changedJson) // write changes to file
 
 
 console.log(changedJson);
-
