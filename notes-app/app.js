@@ -22,8 +22,8 @@ yargs.command({
            type: 'string'
        }
     },
-    handler: function (argv) {
-        notes.addNote(argv.title, argv.body)
+    handler(argv) { // setting the command line command
+        notes.addNote(argv.title, argv.body) // run the addNote function usin argv.title as the title and argv.body for the body
     }
 })
 
@@ -31,8 +31,15 @@ yargs.command({
 yargs.command({
     command: 'remove',
     describe: 'Remove a note',
-    handler: function () {
-        console.log('Removing the note')
+    builer:{
+        title: {
+            describe: 'Note title',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler(argv) { // for an object method the : is no longer needed no function keyword needed either
+        notes.removeNote(argv.title)
     }
 })
 
@@ -49,7 +56,7 @@ yargs.command({
 yargs.command({
     command: 'read',
     describe: 'read a note',
-    handler: function () {
+    handler: () => {
         console.log('read the note')
     }
 })
