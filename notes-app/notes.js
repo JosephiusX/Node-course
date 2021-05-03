@@ -1,16 +1,11 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
-const getNotes = () => {
-    return 'Your notes...'
-}
-
 const addNote = (title, body) => { // function responsible for adding a note with title and body args
     const notes = loadNotes()
     // const duplicateNotes = notes.filter((note => note.title === title)) // this function is going to run for every item in notes array then adds every note loaded with a title matching the argv title
     const duplcateNote = notes.find((note) => note.title === title) // returns the first match if any,     using the same function as we would with filter only find stops once if a match is found, will return undefined if no match is found
     
-
     if(!duplicateNote) { // if we didnt find a duplicate  then
         notes.push({ // we can safely create the note
             title: title,
@@ -22,13 +17,12 @@ const addNote = (title, body) => { // function responsible for adding a note wit
     } else { // if there is a duplicate note
         console.log('Note title taken!')
     }
-
 }
 
 const removeNote = (title) => {
     const notes = loadNotes() // load existing notes
-    const notesToKeep = notes.filter( (note) => note.title !== title) // this function is going to run for every item in notes array
-         // add every note loaded with a title NOT matching the argv title
+    const notesToKeep = notes.filter( (note) => note.title !== title) // this function is going to run for every item in notes array , add every note loaded with a title NOT matching the argv title
+         
     
     if(notes.length > notesToKeep.length) { // if the lingth is diffrent
         console.log(chalk.green.inverse('Note reomved!')) // console log with npm package chalk
