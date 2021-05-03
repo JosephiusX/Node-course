@@ -23,3 +23,9 @@ L.16 Argument parsing with yargs
 
 L.19 Adding a note
 
+L.22 Refactoring arrow functions
+    // to test if everything is working refactored
+    in notes-app dir:
+    node app.js remove --title="List" : to remove the note
+    // running the same command again : shows what happens when ther is no note to edit
+    node app.js add --title="t" --body="b" : to add a note

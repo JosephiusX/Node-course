@@ -7,11 +7,11 @@ const getNotes = () => {
 
 const addNote = (title, body) => { // function responsible for adding a note with title and body args
     const notes = loadNotes()
-    const duplicateNotes = notes.filter( (note => note.title === title)) // this function is going to run for every item in notes array
-         // add every note loaded with a title matching the argv title
+    // const duplicateNotes = notes.filter((note => note.title === title)) // this function is going to run for every item in notes array then adds every note loaded with a title matching the argv title
+    const duplcateNote = notes.find((note) => note.title === title) // returns the first match if any,     using the same function as we would with filter only find stops once if a match is found, will return undefined if no match is found
     
 
-    if(duplicateNotes.length === 0) { // if we didnt find any duplicates then
+    if(!duplicateNote) { // if we didnt find a duplicate  then
         notes.push({ // we can safely create the note
             title: title,
             body: body
@@ -19,7 +19,7 @@ const addNote = (title, body) => { // function responsible for adding a note wit
         console.log(notes);
         saveNotes(notes) // calling saveNotes function below and passing in notes array
         console.log('New note added!')
-    } else { // if there are duplicates
+    } else { // if there is a duplicate note
         console.log('Note title taken!')
     }
 
@@ -38,6 +38,28 @@ const removeNote = (title) => {
     }
 }
 
+const listNotes = () => {
+    const notes = loadNotes()
+
+    console.log(chalk.inverse('Your notes'))
+
+    notes.forEach((note) => {
+        console.log(note.title)
+    })
+}
+
+const readNote = (title) => {
+    const notes = loadNotes()
+
+    const note = notes.find((note) => note.title === title)
+
+    if (note) { // if there is a matching note
+        console.log(chalk.inverse(note.title))
+        console.log(note.body)
+    } else { 
+        console.log(chalk.red.inverse('No note found!'))
+    }
+}
 
 
 
@@ -62,5 +84,7 @@ const loadNotes = () => { // loading the notes objects from the notes.json file
 module.exports = { // set this to an object containing multiple functions instead of one
     getNotes: getNotes, // property getNotes
     addNote: addNote, // exporting addNote function
-    removeNote: removeNote // export remove Note
+    removeNote: removeNote, // export removeNote function
+    listNotes: listNotes, // export listNote Function
+    readNote: readNote // export reaeNote function
 }
