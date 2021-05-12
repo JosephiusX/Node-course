@@ -1,11 +1,8 @@
-console.log('starting')
+const request = require('request');
 
-setTimeout(() => { // heres a function, run it after 2 seconds have passed
-    console.log('2 second Timer')
-}, 2000)
+const url = 'http://api.weatherstack.com/current?access_key=fcbecc958bca8e867c813ba8ff9825de&query=37.8267,-122.4233'
 
-setTimeout(() => {
-    console.log('0 second timer')
-}, 0)
-
-console.log('stopping')
+request({ url: url} ,(error, response) => {
+    const data = JSON.parse(response.body)
+    console.log(data.current)
+})
