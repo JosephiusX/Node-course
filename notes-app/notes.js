@@ -1,6 +1,8 @@
 const fs = require('fs')
 const chalk = require('chalk')
 
+debugger
+
 const addNote = (title, body) => { // function responsible for adding a note with title and body args
     const notes = loadNotes()
     // const duplicateNotes = notes.filter((note => note.title === title)) // this function is going to run for every item in notes array then adds every note loaded with a title matching the argv title
@@ -12,7 +14,7 @@ const addNote = (title, body) => { // function responsible for adding a note wit
             body: body
         })
         console.log(notes);
-        saveNotes(notes) // calling saveNotes function below and passing in notes array
+        saveNotes(notes) // calling saveNotes function below and passing in notes array// add every note loaded with a title NOT matching the argv title
         console.log('New note added!')
     } else { // if there is a duplicate note
         console.log('Note title taken!')
