@@ -40,5 +40,15 @@ L.30 Callstack Callback queue, event loop
 
 L.31 Making http request ( sign up for weather stack)
 
+    weather api
     API access key : fcbecc958bca8e867c813ba8ff9825de
-    
+
+L.33 An HTTP Request Challange
+
+    Sign up at free at mapbox.com for an access token:
+        pk.eyJ1IjoiZ3JhbWtyYWNrZXIiLCJhIjoiY2tvbTUzZXhqMGFuYTJ2bDZkMnozeHo1NCJ9.pvL5mbZl8DZuAjtBZR3tUA
+
+
+    password: password
+    username: my email
+
