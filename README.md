@@ -59,3 +59,9 @@ L.35 The callback function : 4-callbacks.js
     a function we provide as the argument to another function
 
     challange: links.mead.io/callback
+
+L36. Callback Abstraction
+
+    in weather app make utils directory
+        in it touch geocode.js
+        
