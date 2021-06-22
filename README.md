@@ -72,3 +72,6 @@ sec3 10
         weatherstack base url with key and long lat: 
             'https://api.weatherstack.com/current?access_key=fcbecc958bca8e867c813ba8ff9825de&query=' + latitude + ',' + longitude + '&units=f'
 
+    38. Callback Chaining
+        
+
