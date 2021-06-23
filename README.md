@@ -73,5 +73,9 @@ sec3 10
             'https://api.weatherstack.com/current?access_key=fcbecc958bca8e867c813ba8ff9825de&query=' + latitude + ',' + longitude + '&units=f'
 
     38. Callback Chaining
-        
+
+    39. ES6 Aside: Object Property Shorthand and Destructurir
+
+            in playground touch 5-es6-objcts.js
+
 
