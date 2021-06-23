@@ -111,3 +111,9 @@ sec3 10
         2. Setup a weather route and rnder a page title
         3. test your work by visiting both in the browser
 
+    44. Serving up html and JSON
+
+        res.send() will render html
+
+        res.send() will also render objects or arrays of objects
+
