@@ -91,4 +91,23 @@ sec3 10
         navigate to node.js docs to the version api
             in the table of contents we are going to look at http and https
 
+42 Section Intro: Web servers
+
+    43. Hello Express!
+
+        i can use express to serve files
+        i can also use it to make web apis
+
+        make web-server dir
+            in npm init -y
+            npm i express@4.16.4
+        
+        in web-server dir make sub dir called src
+            in it touch app.js
+        
+        challange: goal : seup two new routes
+
+        1. setup am about route and render a page title
+        2. Setup a weather route and rnder a page title
+        3. test your work by visiting both in the browser
 
