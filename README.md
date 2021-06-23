@@ -88,4 +88,7 @@ sec3 10
 
     41. Bonus: HttP Requests Without a Library
 
+        navigate to node.js docs to the version api
+            in the table of contents we are going to look at http and https
+
 
