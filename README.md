@@ -117,3 +117,23 @@ sec3 10
 
         res.send() will also render objects or arrays of objects
 
+    45. Serving up Static Assets
+
+        mkdir public
+        in public dir add index.html
+
+        console.log(__dirname) // path to the directory, C:\Users\gramk\OneDrive\Desktop\Node-course\web-server\src
+        
+        console.log(__filename) // path to the file, C:\Users\gramk\OneDrive\Desktop\Node-course\web-server\src\app.js
+
+        require path core node module
+
+        CHALLANGE: create two more HTML files
+
+        1. create a html page for about with 'About' title
+        2.create a html page for help with 'Help' title
+        3. Remove the old route handlers for both
+        4. Visit both in the browser to test
+
+        http://localhost:3000/about.html
+        http://localhost:3000/help.html
