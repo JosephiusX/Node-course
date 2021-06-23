@@ -6,17 +6,17 @@ const address = process.argv[2] // the second command line argument
 if (!address) { // if there is no address
   console.log('Please provide an address')
 } else {
-  geocode(address, (error, data) => {
+  geocode(address, (error, { longitude, latitude, location} = {}) => {
     if(error) {
       console.log(error)
     }
   
-      forecast(data.lattitude, data.longitude, (error, forcastData) => {
+      forecast(longitude, latitude, (error, forcastData) => {
         if (error) {
           return console.log(error)
         }
   
-        console.log(data.location)
+        console.log(location)
         console.log(forcastData)
         
     })

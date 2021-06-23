@@ -78,4 +78,14 @@ sec3 10
 
             in playground touch 5-es6-objcts.js
 
+    40. Destructuring and Property Shorthand Challenge
+
+            goal: use both destructuring and property shorthand in weather app
+
+            1. Use destructuring in app.js, forcast.js, and geocode.js
+            2. Use Property shorthand in forcast.js and geocode.js
+            3. Test your wprk and ensure app still work
+
+    41. Bonus: HttP Requests Without a Library
+
 
