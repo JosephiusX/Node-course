@@ -137,3 +137,32 @@ sec3 10
 
         http://localhost:3000/about.html
         http://localhost:3000/help.html
+
+    46. Serving up CSS, JS, Images, and More
+
+        for orginization add css subdir within public dir
+                in it touch styles.css
+
+        in public make js subdir
+            in it touch app.js
+
+    47. Dynamic Pages with Templating
+
+        npm i hbs@4.0.1
+            in app.js:
+                app.set('view engine', 'hbs')
+
+        make views directory in project folder
+            in it make a handlebars file:
+                index.hbs
+                    setup route
+                about.hbs
+                    setup route
+
+            challange: Create a template for help page
+                1. Setup a help template to render a halp message to the screen
+                2. Setup  the help route and render the template with an example message
+                3. Visit the route in the browser and see your help message print
+
+                    passed with flying colors
+
