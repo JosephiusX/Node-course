@@ -2,10 +2,17 @@ const path = require('path'); // core node module, no install needed
 const express = require('express')
 
 const app = express()
-const publicDirectoryPath = path.join(__dirname, '../public')
 
-app.use(express.static(publicDirectoryPath))
+// Define paths for Express config
+const publicDirectoryPath = path.join(__dirname, '../public')
+const viewsPath = path.join(__dirname, '../templates')
+
+// setup handlebars engine and views location
 app.set('view engine', 'hbs') // for handlebars module
+app.set('views', viewsPath)
+
+// Setup static directory to serve
+app.use(express.static(publicDirectoryPath))
 
 app.get('',(req, res) => {
     res.render('index', { // in this case we have the file and the second argument is an object that we can use to make the page dynamic
