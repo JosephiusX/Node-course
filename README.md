@@ -231,3 +231,16 @@ sec 8 Accessing API from Browser(Weather App)
         4. Test /weather and /weather?addresses=philadelphia
 
     55. Building a JSON HTTP Endpoint
+
+        copy utils file from weather-app and paste it in web-server source dir
+
+        npm i request@2.88.0
+
+        CHALLANGE: wire up / weather
+
+        1. Require geocode/forcast into app.js
+        2. Use the address to geocode
+        3. Use the coordinates to get forcast
+        4. Send back the real forcast and location
+
+        

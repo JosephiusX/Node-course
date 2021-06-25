@@ -18,7 +18,6 @@ if (!address) { // if there is no address
   
         console.log(location)
         console.log(forcastData)
-        
     })
   })
 }
