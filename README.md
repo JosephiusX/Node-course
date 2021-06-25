@@ -219,4 +219,15 @@ sec3 10
 
     52. Styling Application Part 2
 
-    
+sec 8 Accessing API from Browser(Weather App)
+
+    54. The Query String
+
+        CHALLANGE: update weather endpoint to accept address
+
+        1. No address? Send back an error message
+        2. Address? Send back the static JSON
+        3. - Add address property onto JSON which returns the provided address
+        4. Test /weather and /weather?addresses=philadelphia
+
+    55. Building a JSON HTTP Endpoint

@@ -40,11 +40,30 @@ app.get('/about', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
+    if(!req.query.address) { // if there is no address in the query string
+        return res.send({
+            error: ' You must provide an address!'
+        })
+    }
+
 res.send({
-    title: 'weather',
     forcast: 'sunney',
     location: 'Los Angeles',
+    address: req.query.address
 })
+})
+
+app.get('/products', (req, res) => {
+    if (!req.query.search) { // if there is no search term
+        return res.send({
+            error: 'You must provide a search term'
+        })
+    }
+
+    console.log(req.query.search)
+    res.send({
+        products: []
+    })
 })
 
 app.get('/help/*', (req, res) => { // http://localhost:3000/help/blabla , help 404
