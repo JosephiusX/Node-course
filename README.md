@@ -216,3 +216,7 @@ sec3 10
         in views touch 404.hbs
 
     51. Styling the Application: Part 1
+
+    52. Styling Application Part 2
+
+    
