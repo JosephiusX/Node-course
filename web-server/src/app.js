@@ -27,7 +27,6 @@ app.get('',(req, res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         helpText: 'This is some helpful text.',
-        title: 'Help',
         name: 'Andrew Mead'
     })
 })
@@ -45,6 +44,22 @@ res.send({
     forcast: 'sunney',
     location: 'Los Angeles',
 })
+})
+
+app.get('/help/*', (req, res) => { // http://localhost:3000/help/blabla , help 404
+    res.render('404', {
+        title: '404',
+        name: 'Andrew Mead',
+        errorMessage:'help article not found'
+    })
+})
+
+app.get('*', (req, res) => { // match anything that hasent been matched so far
+    res.render('404', {
+        title: '404',
+        name: 'Joseph Granville',
+        errorMessage: 'Page not found'
+    })
 })
 
 app.listen(3000, () => {

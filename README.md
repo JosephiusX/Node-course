@@ -200,4 +200,19 @@ sec3 10
         2 Register the partial at the bottom of all therr pages
         3. Test your work by visiting all three papers
 
+    50. 404 Pages
 
+        setup another route handler using app.get
+
+        CHALLANGE : create and render a 404 page with handlebars
+
+        1. setup the template to render the header and footer
+        2. setup the template to render an error message in a paragrapg
+        3. Render the template for both 404 routes
+            - page not found
+            - help article
+        4. Test your work. bisit /what and /help/units
+
+        in views touch 404.hbs
+
+    51. Styling the Application: Part 1
