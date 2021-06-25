@@ -26,8 +26,9 @@ app.get('',(req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
+        title: 'help',
         helpText: 'This is some helpful text.',
-        name: 'Andrew Mead'
+        name: 'Joseph Granville'
     })
 })
 
@@ -49,7 +50,7 @@ res.send({
 app.get('/help/*', (req, res) => { // http://localhost:3000/help/blabla , help 404
     res.render('404', {
         title: '404',
-        name: 'Andrew Mead',
+        name: 'Joseph Granville',
         errorMessage:'help article not found'
     })
 })
