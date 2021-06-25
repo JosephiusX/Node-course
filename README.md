@@ -168,5 +168,36 @@ sec3 10
 
     48. Customizing the Views Directory
 
-            
+            rename views dir to templates
+            in the main app.js:
+                const viewsPath = path.join(__dirname, '../templates')
+
+                app.set('views', viewsPath)
+
+
+    49. Advanced Templating
+
+            in templates dir make views and partials dirs
+
+            in views place the hbs files
+
+            in app.js change the path variable to:
+                const viewsPath = path.join(__dirname, '../templates/views')
+
+            make partials path variable:
+                const partialsPath = path.join(__dirname, '../templates/partials)
+            then we configure:
+                hbs.registerPartials(partialsPath)
+
+            in partials touch header.hbs
+
+            to render partial  {{>header}}
+            nodemon src/app.js -e
+
+        challange create a partial for the footer
+
+        1. Setup the template for the footer partial 'Created by some Name'
+        2 Register the partial at the bottom of all therr pages
+        3. Test your work by visiting all three papers
+
 
