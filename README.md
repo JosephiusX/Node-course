@@ -256,3 +256,13 @@ sec 8 Accessing API from Browser(Weather App)
          - If error property, print error
          - If no error property, print location and forcast
         3. Refresh the browser and test
+    
+    58. Creating a search form
+
+        CHALLANGE: Use input value to get weather
+
+        1. Migrate fetch call into the submit callback
+        2. Use the search text as the address query string value
+        3. Submit the form with a valid and invalid value to test
+
+        
