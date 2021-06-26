@@ -246,3 +246,13 @@ sec 8 Accessing API from Browser(Weather App)
     56. ES6 Aside: Default Function Parameters
 
           in playground touch 7-default-params.js
+
+    57. Browser HTTP Request with Fetch
+
+        CHALLANGE: Fetch weather!
+
+        1. Setup a call to fetch to fetch weather for Boston
+        2. Get the parse JSON response
+         - If error property, print error
+         - If no error property, print location and forcast
+        3. Refresh the browser and test
