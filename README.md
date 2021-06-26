@@ -243,4 +243,6 @@ sec 8 Accessing API from Browser(Weather App)
         3. Use the coordinates to get forcast
         4. Send back the real forcast and location
 
-        
+    56. ES6 Aside: Default Function Parameters
+
+          in playground touch 7-default-params.js

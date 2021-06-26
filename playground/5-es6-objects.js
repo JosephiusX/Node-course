@@ -29,8 +29,8 @@ const product = {
 // console.log(stock)
 // console.log(productLabel, stock)
 
-const transaction = (type, {label, stock}) => { // if we know the arg is a object we cam destructure it right in line
+const transaction = (type, {label, stock = 0} = {}) => { // if we know the arg is a object we cam destructure it right in line
     console.log(type, label, stock)
 }
 
-transaction('order', product)
+transaction('order')
