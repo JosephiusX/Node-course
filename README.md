@@ -290,9 +290,12 @@ sec 9 Application Deployment (Weather App)
                 press any key
                     login
 
-        ****** right now im setup as gramkracker88@gmail which may be a problem later
+        ****** right now im setup as gramkracker88@gmail which may be a problem later because its not the github account that im using for this class.
 
     62. Version Control with Git
 
-        
+        to see if it is installed:
+            git --version
+
+
             
