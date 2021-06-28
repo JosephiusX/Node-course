@@ -220,6 +220,7 @@ sec3 10
     52. Styling Application Part 2
 
 sec 8 Accessing API from Browser(Weather App)
+    explored express learning how we can serve json and html,  express to serve contents of entire directorys and work with templating engines.
 
     54. The Query String
 
@@ -265,4 +266,33 @@ sec 8 Accessing API from Browser(Weather App)
         2. Use the search text as the address query string value
         3. Submit the form with a valid and invalid value to test
 
+    59. Wire up the user interface    
+
+    CHALLANGE: Render contern to paragraph
+
+    1. Select the second message p from Javascript
+    2. Just before fetch, render loading message and empty p
+    3. If error, render error
+    4. If no error, render location and forecast
+    5. Test Work! Search for errors and for valid locations
+
+sec 9 Application Deployment (Weather App)
+
+    61.. Joining Heroku and GitHub
+
+        install heroku for windows 64
+
+        in the top level of the node course run to see if downloadded after restarting terminal:
+            heroku -v
+
+        then to log in :
+            heroku login
+                press any key
+                    login
+
+        ****** right now im setup as gramkracker88@gmail which may be a problem later
+
+    62. Version Control with Git
+
         
+            
