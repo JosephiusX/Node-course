@@ -297,5 +297,9 @@ sec 9 Application Deployment (Weather App)
         to see if it is installed:
             git --version
 
+    63. Exploring Git
+
+        basic git theory
+
 
             
