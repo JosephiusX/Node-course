@@ -301,5 +301,14 @@ sec 9 Application Deployment (Weather App)
 
         basic git theory
 
+    64. Integrating Git
+
+        in root directory make file:
+            .gitignore
+                in it write:
+            node_modules/
+
+        add all files:
+            git add .
 
             
