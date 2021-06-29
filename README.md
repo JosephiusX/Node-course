@@ -325,9 +325,9 @@ sec 9 Application Deployment (Weather App)
             ssh-add ~/.ssh/id_rsa
                 then: fill in passphrase
 
-        66. Pushing Code to GitHub
+    66. Pushing Code to GitHub
 
-        67. Deploying Node.js to Heroku
+    67. Deploying Node.js to Heroku
 
             finds our ssh keys:
                 heroku keys:add
@@ -344,6 +344,7 @@ sec 9 Application Deployment (Weather App)
 
             at the top of app.js:
                 const port = process.env.PORT || 3000
+
 
             use variabl port at the bottom of app.js in place of 3000
 
@@ -365,4 +366,27 @@ sec 9 Application Deployment (Weather App)
 
             PS. I ended up making a new folder outside of this pre existing repo to avoid confusion
 
-            
+    68. New Feature Deplayment Workflow
+
+        nodemon src/app.js -e js,hbs
+
+        make changes, add and commit changes 
+
+        git push heroku main.
+
+        ( again takes place in a seporate file cause git was already set up in this one)
+
+        CHALLANGE: add new data to forcast
+
+        1. update the forecast string to include new data
+        2. commit your changes
+        3.Push your changes to GitHub and deploy to heroku
+        4.Test!!! using live application
+
+        I make the changes
+
+        i add and commit changes
+
+        then I push to heroku:
+            git commit heroku main
+    
