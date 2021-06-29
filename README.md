@@ -311,4 +311,19 @@ sec 9 Application Deployment (Weather App)
         add all files:
             git add .
 
+    65. Setting up SSH Keys
+
+        show files in directory including -a hidden ones, -l easy to read
+            ls -a -l ~/.ssh
+
+        run this command to see if im up and running:
+             eval $(ssh-agent -s)
+        result should look something like:  
+             eAgent pid 840
+
+        then:
+            ssh-add ~/.ssh/id_rsa
+                then: fill in passphrase
+
+
             
