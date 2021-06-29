@@ -327,5 +327,32 @@ sec 9 Application Deployment (Weather App)
 
         66. Pushing Code to GitHub
 
+        67. Deploying Node.js to Heroku
+
+            finds our ssh keys:
+                heroku keys:add
+                    press y to upload
+
+            create application from the root of our project:
+                heroku create 'project name' , or if empty random one specified
+            we get 2 things from this   
+                an address where the app is hosted
+                and an address where to put the github
+
+            tell heroku which file to run in package.json scripts:
+                "start": "node src/app.js"
+
+            at the top of app.js:
+                const port = process.env.PORT || 3000
+
+            use variabl port at the bottom of app.js in place of 3000
+
+            in other app.js remove 'localhost:3000' part from fetch
+
+            git status
+            add all with git:
+                git add .
+            then commit with message:
+                git commit -m
 
             
