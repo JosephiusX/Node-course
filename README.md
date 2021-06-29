@@ -389,4 +389,23 @@ sec 9 Application Deployment (Weather App)
 
         then I push to heroku:
             git commit heroku main
+
+    69. Avoiding Global Modules
+
+        add to scripts object in package.json file:
+            "dev": "nodemon src/app.js -e js,hbs"
+
+        now i can start up the file with nodemon like this:
+                npm run dev
+
+        uninstalling global nodemon:
+            npm uninstall -g nodemon
+
+        install it as a dev(local) dependancy instead:
+            npm install nodemon@1.2.0 --save-dev
+ 
+        now nodemon command in the terminal wont work because its not installed globally anymore, but package.json scripts can use commands from locally installed modules
+
+
+     
     
