@@ -412,7 +412,29 @@ sec 10 MongoDB and Promises(Task App)
 
         mongodb is no sql, it uses collections instead of tables
 
-    72
+    72. Installing MongoDB on MacOs and Linux
+
+    73. Installing mongo db on Windows
+
+        already installed from another course. lets hope that works
+
+    74. Installing Database GUI Viewer
+
+        google search:
+            robo 3t option
+        on the cite we download the Robo 
+
+        when making a cannection i have to open the mongo window first
+
+        then test and make connection
+
+        right click on Local MongoDB Database and select open shell. in it write the commmand:
+            db.version()
+                in the upper left hand side press play btn to see results
+
+        
+
+            
 
 
 
