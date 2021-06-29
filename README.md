@@ -432,7 +432,26 @@ sec 10 MongoDB and Promises(Task App)
             db.version()
                 in the upper left hand side press play btn to see results
 
-        
+    75. Connecting and Inserting Documents
+
+        mongoDB.com > docs > MongoDB drivers > Node > api documentation
+
+        to find the mongodb node driver search npm for mongodb
+
+        in Node-course mkdir task-manager
+
+        cd task-manager
+            npm init -y
+            npm i mongodb@3.1.10
+            touch mongodb.js
+
+        to run after files configured:
+
+            node mongodb.js
+
+        in Root 3T :
+            clear tabs
+            right click on Local MongooseDB Database to refresh to see the new db we created
 
             
 
