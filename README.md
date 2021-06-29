@@ -354,5 +354,15 @@ sec 9 Application Deployment (Weather App)
                 git add .
             then commit with message:
                 git commit -m
+            see that heroku remote was added:
+                git remote  
+
+            build the app:
+                git push heroku main
+
+            the result is the address where the app is hosted:
+                 https://granville-weather-app.herokuapp.com/
+
+            PS. I ended up making a new folder outside of this pre existing repo to avoid confusion
 
             
