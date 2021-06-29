@@ -453,6 +453,20 @@ sec 10 MongoDB and Promises(Task App)
             clear tabs
             right click on Local MongooseDB Database to refresh to see the new db we created
 
+    76. Inserting Documents
+
+        CHALLANGE: insert 3 tasks into a new task collection
+
+        1. use insertMany to insert three documents
+            -description (string), completed (boolean)
+        2.Setup the callback to handle error or print ops
+        3. Run the script
+        4. Refresh the database in Robo 3t and view data in tasks collection
+
+
+
+    
+
             
 
 
