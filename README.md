@@ -406,6 +406,17 @@ sec 9 Application Deployment (Weather App)
  
         now nodemon command in the terminal wont work because its not installed globally anymore, but package.json scripts can use commands from locally installed modules
 
+sec 10 MongoDB and Promises(Task App)
+
+    71. MongoDB and NoSQL Databases
+
+        mongodb is no sql, it uses collections instead of tables
+
+    72
+
+
+
+
 
      
     
