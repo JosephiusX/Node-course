@@ -1,17 +1,10 @@
 // CRUD create read update delete
 
-// const mongodb = require('mongodb') // npm library, mongodb driver created by mongodb so that it can work with node js
-// const MongoClient = mongodb.MongoClient
-// const ObjectID = mongodb.ObjectID
-
 const { MongoClient, ObjectID } = require('mongodb')
 
 const connectionURL = 'mongodb://127.0.0.1:27017'
 const databaseName = 'task-manager'
 
-const id = new ObjectID()
-console.log(id.id.length)
-console.log(id.toHexString().length)
 
 MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => { // use connect method to connect to a diffrent server
     if(error) {
@@ -20,50 +13,33 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
     const db = client.db(databaseName) // get connection for specific database
 
-    // db.collection('users').insertOne({ // we create a collection called users and we insert one users name and age
-    //     name: 'Vicram',
-    //     age: 26
-    // }, (error, result) =>{
+    // db.collection('users').findOne({_id: ObjectID("60db8087e0de2d13d070df10")}, (error, user) => {
     //     if(error) {
-    //         return console.log('Unable to insert user')
+    //         return console.log('Unable to fetch')
     //     }
-
-    //     console.log(result.ops)
+    //     console.log(user)
     // })
 
-    // db.collection('users').insertMany([ // inserting many
-    //     {
-    //         name: 'Jen',
-    //         age: 28
-    //     }, {
-    //         name: 'Gunther',
-    //         age: 27
-    //     }
-    // ], (error, result) => {
-    //     if (error) {
-    //         return console.log('Unable to insert documents!')
-    //     }
-
-    //     console.log(result.ops)
+    // db.collection('users').find({ age: 27 }).toArray((error, users) => {
+    //     console.log(users)
     // })
 
-    // Challange
-    // db.collection('documents').insertMany([ // inserting many
-    //     {
-    //         description: 'javascript course',
-    //         completed: true
-    //     }, {
-    //         description: 'node course',
-    //         completed: false
-    //     }, {
-    //         description: 'github course',
-    //         completed: true
-    //     }
-    // ], (error, result) => {
-    //     if (error) {
-    //         return console.log('Unable to insert documents!')
-    //     }
-
-    //     console.log(result.ops)
+    // db.collection('users').find({ age: 27 }).count((error, count) => {
+    //     console.log(count)
     // })
+
+    // CHALLANGE
+
+    db.collection('documents').findOne({_id: ObjectID("60db71aa375ae808d01f8629")}, (error, documents) => {
+        if(error) {
+            return console.log('Unable to fetch')
+        }
+        console.log(documents)
+    })
+
+    db.collection('documents').find({ completed: false }).toArray((error, documents) => {
+        console.log(documents)
+    })
+
+
 })

@@ -467,6 +467,14 @@ sec 10 MongoDB and Promises(Task App)
 
     78. Querying Documents
 
+        CHALLANGE: use find and findone with tasks
+
+        1. use findone to fetch the last task by its id (print doc to console)
+        2. Use find to fetch all tasks that are not completed ( print docs to console)
+        3. Test !!!!
+
+        
+
 
 
     
