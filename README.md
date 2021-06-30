@@ -479,7 +479,7 @@ sec 10 MongoDB and Promises(Task App)
 
         promises are either pending fufilled or rejected
 
-    80. Uploading Documents
+    80. Updating Documents
 
             google search:
                 mongodb update operators
@@ -505,6 +505,26 @@ sec 10 MongoDB and Promises(Task App)
                 }).catch((error) => {
                     console.log(error)
                 })
+
+    81. Deleting Documents
+
+        CHALLANGE:  use deleteOne to remove a task
+
+        1. Grab the description for the task you want to remove
+        2. Setup the call with the query
+        3. Use promise methods to setup the success/error handlers
+        4. Test your work!
+
+        SOOUTION :
+            const db = client.db(databaseName) // get connection for specific database
+
+            db.collection('users').deleteOne({
+                name: 'Vicram'
+            }).then((result) => {
+                console.log(result)
+            }).catch((error) => {
+                console.log(error)
+            })
     
 
 
