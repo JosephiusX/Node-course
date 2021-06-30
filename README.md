@@ -479,6 +479,32 @@ sec 10 MongoDB and Promises(Task App)
 
         promises are either pending fufilled or rejected
 
+    80. Uploading Documents
+
+            google search:
+                mongodb update operators
+
+            we can use $inc to incriment a value
+
+            CHALLANGE: Use updateMany to complete all tasks
+
+            1. Check the documentation for updateMany
+            2. Setup the call with the query and the updates
+            3. use promise methods to setup the success/error handlers
+            4. Test your work!
+
+        my solution
+            db.collection('documents').updateMany({
+                    completed: false
+                }, { 
+                    $set:{ 
+                        completed: true
+                    }
+                }).then((result) => {
+                    console.log(result)
+                }).catch((error) => {
+                    console.log(error)
+                })
     
 
 

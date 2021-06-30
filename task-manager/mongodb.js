@@ -13,33 +13,27 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
     const db = client.db(databaseName) // get connection for specific database
 
-    // db.collection('users').findOne({_id: ObjectID("60db8087e0de2d13d070df10")}, (error, user) => {
-    //     if(error) {
-    //         return console.log('Unable to fetch')
+    // db.collection('users').updateOne({ // updating one
+    //     _id: new ObjectID("60db61aff44b4905d0147ae1") // we select the object by its id
+    // }, {
+    //     $inc: { // select the key with the value we want to change
+    //         age: 1
     //     }
-    //     console.log(user)
+    // }).then((result) => {
+    //     console.log(result)
+    // }).catch((error) => {
+    //     console.log(error)
     // })
 
-    // db.collection('users').find({ age: 27 }).toArray((error, users) => {
-    //     console.log(users)
-    // })
-
-    // db.collection('users').find({ age: 27 }).count((error, count) => {
-    //     console.log(count)
-    // })
-
-    // CHALLANGE
-
-    db.collection('documents').findOne({_id: ObjectID("60db71aa375ae808d01f8629")}, (error, documents) => {
-        if(error) {
-            return console.log('Unable to fetch')
+    db.collection('documents').updateMany({
+         completed: false
+    }, { 
+        $set:{ 
+            completed: true
         }
-        console.log(documents)
+    }).then((result) => {
+        console.log(result)
+    }).catch((error) => {
+        console.log(error)
     })
-
-    db.collection('documents').find({ completed: false }).toArray((error, documents) => {
-        console.log(documents)
-    })
-
-
 })
