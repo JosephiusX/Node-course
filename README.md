@@ -530,12 +530,43 @@ sec 11: REST API's and mongoose
 
     83. Setting up Mongoose
 
-    npm i mongoose@5.3.16
-    mkdir src
-    in src mkdir db
-    in db touch mongoose.js
-    
+        npm i mongoose@5.3.16
+        mkdir src
+        in src mkdir db
+        in db touch mongoose.js
 
+    84. Creating a Mongoose Model
+
+        CHALLANGE: create a model for tasks
+
+        1. Define the model with description and complete fields
+        2. Create a new instance of th model
+        3. Save the model to the database
+        4. Test your work!
+
+        SOLUTION:
+
+        const task = mongoose.model('task', {
+            task: {
+                type: String
+            },
+            completed: {
+                type: Boolean
+            }
+        })
+
+        const chore = new task({
+            task: 'take out the trash',
+            completed: false
+        })
+
+        chore.save().then(() =>{
+            console.log(chore)
+        }).catch((error) => { 
+            console.log('Error!', error)
+        })
+    
+    84. 
 
 
 
