@@ -473,7 +473,14 @@ sec 10 MongoDB and Promises(Task App)
         2. Use find to fetch all tasks that are not completed ( print docs to console)
         3. Test !!!!
 
-        
+    79. Promises
+
+        in playground dir touch 8-promises.js
+
+        promises are either pending fufilled or rejected
+
+    
+
 
 
 
