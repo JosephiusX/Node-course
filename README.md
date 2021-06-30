@@ -526,6 +526,16 @@ sec 10 MongoDB and Promises(Task App)
                 console.log(error)
             })
     
+sec 11: REST API's and mongoose
+
+    83. Setting up Mongoose
+
+    npm i mongoose@5.3.16
+    mkdir src
+    in src mkdir db
+    in db touch mongoose.js
+    
+
 
 
 
