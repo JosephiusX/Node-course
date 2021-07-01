@@ -705,7 +705,36 @@ sec 11: REST API's and mongoose
 
     92. Resource reading pt 2
 
+        CHALLANGE: Setup the task reading endpoints
 
+        1. Create an endpoint for fetching all tasks
+        2. Create an endpoint for fetching a task by its id
+        3. Setup new requests in Postman and test your work
+        
+        RESULTS:
+
+        app.get('/task', (req, res) => {
+                Task.find({}).then((task) => {
+                    res.send(task)
+                }).catch((e) => {
+                    res.status(500).send()
+                })
+            })
+
+            app.get('/task/:id', (req, res) => {
+                const _id = req.params.id
+
+                Task.findById(_id).then((task) => {
+                    if (!task) {
+                        return res.status(404).send()
+                    }
+
+                    res.send(task)
+                }).catch((e) => {
+                    res.status(500).send()
+                })
+                
+            })
         
 
 

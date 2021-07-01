@@ -51,6 +51,29 @@ app.post('/task', (req, res) => {
     })
 })
 
+app.get('/tasks', (req, res) => { // read route /task
+    Task.find({}).then((tasks) => { // find all tasks defined in task file
+        res.send(tasks) // send
+    }).catch((e) => {
+        res.status(500).send()
+    })
+})
+
+app.get('/task/:id', (req, res) => {
+    const _id = req.params.id
+
+    Task.findById(_id).then((task) => {
+        if (!task) {
+            return res.status(404).send()
+        }
+
+        res.send(task)
+    }).catch((e) => {
+        res.status(500).send()
+    })
+    
+})
+
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`)
 })
