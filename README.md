@@ -629,6 +629,55 @@ sec 11: REST API's and mongoose
 
     88. Installing Postman
 
+    89. Resource Creation Endpoints pt 1
+
+        install nodemon as dev dependancy:
+            npm i nodemon@1.18.9 --save-dev ** didnt work instead i just installed the latest version
+
+        install express
+            npm i express@4.16.4
+
+        inside src touch index.js
+
+        install nodemon as dev dependancy for use in scripts:
+            npm i nodemon --save-dev
+
+        Set up npm scripts for development:
+            "scripts": {
+                "start": "node src/index.js",
+                "dev": "nodemon src/index.js"
+            },
+
+        setup users route and send 'testing' :
+            app.post('/users', (req, res) => {
+                res.send('testing')
+            })
+
+        we can test this with postman by sending a post request to localhost3000/users
+            result:
+                testing
+
+        to send data in postman under body click raw and in the dropdown menue select JSON
+
+        insert this object:
+            {
+                "name": "joseph Granville",
+                "email" : "gramkracker88@gmail.com",
+                "password": "1234567"
+            }
+
+            now when the post is sent with this object in the body it can be accessed in express app with req.body
+
+        in src mkdir models
+            in models touch user.js
+
+        for the testing with postman i have to make sure mongodb is open
+
+
+
+        
+
+
         
 
 
