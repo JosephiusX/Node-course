@@ -699,6 +699,11 @@ sec 11: REST API's and mongoose
 
             check by sending a post request on postman with a task as the body
 
+    91. Resource reading pt 1
+
+        we look for the mongodb natiive driver in the docs
+
+    92. Resource reading pt 2
 
 
         
