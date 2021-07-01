@@ -544,7 +544,7 @@ sec 11: REST API's and mongoose
         3. Save the model to the database
         4. Test your work!
 
-        SOLUTION:
+        my SOLUTION:
 
         const task = mongoose.model('task', {
             task: {
@@ -566,9 +566,54 @@ sec 11: REST API's and mongoose
             console.log('Error!', error)
         })
     
-    84. 
+    85. Data Validation and Sanitization: Part 1 
 
+        validator is a library on npm that has tools for validating diffrent things
 
+        npm i validator@10.9.0
+            require
+
+    86. Data Validation amd sanitization: Part 2
+
+        CHALLANGE: Add a password field to User
+
+        1. Setup the field as a required string
+        2. Ensure the length is greater than 6
+        3. Trim the password
+        4. Ensure that password dosen't contain "password"
+        5. Test your work!
+
+        in the user mongoose model:
+         password: {
+                type: String,
+                required: true,
+                trim: true,
+                minlength: 7,
+                validate(value){
+                    if(value.includes('password')) {
+                        throw new Error('password cannot contain "password"')
+                    }
+                }
+            },
+
+        CHALLANGE: add a password field to User
+
+        1. Trim the description and make it required
+        2. Make completed optional and default it to false
+        3. Test your work with and without errors
+
+        SOLUTION: 
+        const task = mongoose.model('task', {
+                task: {
+                    type: String,
+                    required: true,
+                    trim: true
+                },
+                completed: {
+                    type: Boolean,
+                    default: false
+                }
+            })
 
 
     

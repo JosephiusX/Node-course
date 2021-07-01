@@ -1,4 +1,4 @@
-// CRUD create read update delete
+// CRUD create read update delet
 
 const { MongoClient, ObjectID } = require('mongodb')
 
