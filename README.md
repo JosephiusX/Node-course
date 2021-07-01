@@ -615,6 +615,23 @@ sec 11: REST API's and mongoose
                 }
             })
 
+    87. Structuring a REST API
+
+        THE REST API - Represitional State Transfer - Application Programming Interface (REST API or RESTFUL API)
+
+        AKA - tools that allow us to build software applications
+
+        create: POST/tasks
+        Read: GET/tasks
+        Read: GET/tasks/:id
+        Update: PATCH/tasks/:id
+        Delete: DELETE /tasks/:id
+
+    88. Installing Postman
+
+        
+
+
 
     
 
