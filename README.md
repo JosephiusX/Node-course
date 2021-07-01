@@ -673,6 +673,32 @@ sec 11: REST API's and mongoose
 
         for the testing with postman i have to make sure mongodb is open
 
+    90. Resource Creation Endpoints: Part 2
+
+        CHALLANGE: setup the task creation endpoint
+
+        1. Create a seperate file for the task model (load it into index.js)
+        2.Create the tasl creation endpoint (handl success and error)
+        3.Test the endpoint from postman with good and bad data
+
+        SOLUTION:
+            place the task schema in its own task.js file in models directory and export it
+
+            in index.js, require models/task
+
+            build out server logic:
+                app.post('/task', (req, res) => {
+                    const study = new Task(req.body)
+
+                    study.save().then(() => { 
+                        res.send(task)
+                    }).catch((e) => { 
+                        res.status(400).send(e)
+                    })
+                })
+
+            check by sending a post request on postman with a task as the body
+
 
 
         
