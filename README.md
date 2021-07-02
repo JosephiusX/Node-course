@@ -800,6 +800,14 @@ sec 11: REST API's and mongoose
         1. Refactor
         2. test routs with postman
 
+    98. Resource Updating Endpoints: Part 1
+
+        nongoose docs > quickstart > Queries:
+
+            Model.findByIdAndUpdate()
+
+    99. Resource Updating Endpoints: Part 2
+        
 
         
 
