@@ -735,8 +735,13 @@ sec 11: REST API's and mongoose
                 })
                 
             })
-        
 
+    93. Promise Chaining
+        
+        in task manager make a playground folder
+            in it touch promise-chaining.js
+
+        cd into task manager
 
         
 
