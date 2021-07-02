@@ -102,6 +102,26 @@ app.get('/tasks/:id', async(req, res) => { // find task by id route
     }
 })
 
+app.patch('/tasks/:id', async(req, res) => {
+    const updates = Object.keys(req.body)
+    const allowedUpdates = ['task', 'completed']
+    const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
+
+    if(!isValidOperation) { // if it did not return true
+        return res.status(400).send({error: 'Invalid updates!'}) // send error code along with message to let user know why it was rejected
+    }
+
+    try{
+        const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true})
+        if (!task) { // if there is no task
+            return res.status(404).send() // return not found and send and thats the end of it
+        } // otherwise
+        res.send(task) // send task
+    } catch (e) { // if await is rejected
+        res.status(400).send(e) // send bad request error
+    }
+})
+
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`)
 })
