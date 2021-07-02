@@ -713,13 +713,13 @@ sec 11: REST API's and mongoose
         
         RESULTS:
 
-        app.get('/task', (req, res) => {
-                Task.find({}).then((task) => {
-                    res.send(task)
-                }).catch((e) => {
-                    res.status(500).send()
+            app.get('/task', (req, res) => {
+                    Task.find({}).then((task) => {
+                        res.send(task)
+                    }).catch((e) => {
+                        res.status(500).send()
+                    })
                 })
-            })
 
             app.get('/task/:id', (req, res) => {
                 const _id = req.params.id
@@ -742,6 +742,31 @@ sec 11: REST API's and mongoose
             in it touch promise-chaining.js
 
         cd into task manager
+
+    94. Promise Chaining Challenge
+
+        CHALLANGE: Mess around with promise chaining
+
+        1. create promise-chaining-2.js
+        2. Load in mongoose and task model
+        3. Remove a given task by id
+        4. Get and print the total number of incomplete tasks
+        5. Test your work!
+
+        SOLUTION : 
+            require('../src/db/mongoose')
+            const Task = require('../src/models/task')
+
+            Task.findByIdAndDelete('60dcc0d83f9d131174d42b7d', {task: 'get a life' }).then((task) => { // selecting the task by id and and changing the value of task, then
+                console.log(task)
+                return Task.countDocuments({ completed: false }) // count 
+            }).then((result) => {
+                console.log(result)
+            }).catch((e) => {
+                console.log(e)
+            })
+
+
 
         
 
