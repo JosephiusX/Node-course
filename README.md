@@ -768,6 +768,31 @@ sec 11: REST API's and mongoose
 
     95. Async/Await
 
+    96. Async/Await pt 2
+
+        CHALLANGE: Use async/await
+
+        1. create deleteTaskAndCount as an async function
+        2. use await to delete task and count up incomplete tasks
+        3. Return the count
+        4. Call the function and attach then/catch to log results
+        5. Test work
+
+        SOLUTION:
+
+            const deleteTaskAndCount = async (id) => {
+                const task = await Task.findByIdAndDelete(id)
+                const count = await Task.countDocuments({ 'completed': false })
+                return count
+            }
+
+            deleteTaskAndCount('60dd1f42040002646471d9f8', 2).then((count) => {
+                console.log(count)
+            }).catch((e) => {
+                console.log(e)
+            })
+
+    97. Integrating Async/Await
 
 
         
