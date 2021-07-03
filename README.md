@@ -865,6 +865,13 @@ sec 11: REST API's and mongoose
                 nst Task = require('../models/task') // requier task schema
                 const router = new express.Router()
 
+Section 12 API Authentication and security(Task App)
+
+    103. Securely Storing Passwords: Part 1
+
+        hashing tool for passwords
+
+            n pm i bcryptjs@2.4.3
 
         
 
