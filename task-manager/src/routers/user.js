@@ -49,8 +49,12 @@ router.patch('/users/:id', async (req, res) => { // route for updating users by 
     }
 
     try { // if promise is ufilled
-        //  await Promise find User by Id found in req.params.id , sending what we want changed in req.body, run validators and stuff on what we send in req.body, call the result user
-        const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true})
+        const user = await User.findById(req.params.id)
+
+        updates.forEach((update) => user[update] = req.body[update]) // bracket notation in this case  makes it more dynamic
+        await user.save()
+
+        // const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true}) //  await Promise find User by Id found in req.params.id , sending what we want changed in req.body, run validators and stuff on what we send in req.body, call the result user
 
         if (!user) { // if there is no user
             return res.status(404).send() // return not found and send and thats the end of it

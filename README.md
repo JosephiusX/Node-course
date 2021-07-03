@@ -873,6 +873,25 @@ Section 12 API Authentication and security(Task App)
 
             n pm i bcryptjs@2.4.3
 
+    104. Securely Storing Passwords: Part 2
+
+        CHALLANGE: Change how tasks are updated
+
+        1. Find the task
+        2. Alter the task properties
+        3.Save the task
+        4. Test your work by updating a task from postman. 
+
+        SOLUTION:
+        
+        delete this line:
+            const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true})
+
+        add this line:
+            const task = await Task.findById(req.params.id)
+
+            updates.forEach((update) => task[update] = req.body[update]) 
+            await task.save()
         
 
 

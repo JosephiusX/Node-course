@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
+const bcrypt = require('bcryptjs')
 
-const User = mongoose.model('User', { // seting up schema
+const userSchema = new mongoose.Schema({ // seting up schema
     name: {
         type: String,
         required: true,
@@ -39,5 +40,18 @@ const User = mongoose.model('User', { // seting up schema
         }  
     }
 })
+
+// Password hashed onsave Middleware
+userSchema.pre('save', async function (next) { // apply middleware to userSchema, Pre runs action before save , we need a regular function instead of an arrow because of the this binding, pass next as paramiter
+    const user = this // set this value equivilant to user
+
+    if (user.isModified('password')) { // If a user modifies password
+        user.password = await bcrypt.hash(user.password, 8) // use bcrypt to automatically hash password
+    }
+
+    next() // 
+})
+
+const User = mongoose.model('User', userSchema)
 
 module.exports = User // exporting object user
