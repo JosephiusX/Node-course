@@ -7,7 +7,8 @@ router.post('/users',  async(req, res) => { // adding async chabges behavior of 
 
     try { // if promise is fufilled
         await user.save() // awaiting a promise for user to save (waits for user to save before moving on )
-        res.status(201).send(user) // this code cant run unless the promise above it is fufilled. 
+        const token = await user.generateAuthToken()
+        res.status(201).send({ user, token }) // this code cant run unless the promise above it is fufilled. 
     } catch (e) { // if the promise(await) above fails this runs
         res.status(400).send(e) // send bad request status
     }
@@ -16,7 +17,8 @@ router.post('/users',  async(req, res) => { // adding async chabges behavior of 
 router.post('/users/login', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
-        res.send(user)
+        const token = await user.generateAuthToken()
+        res.send({ user, token})
     } catch (e) {
         res.status(400).send()
     }

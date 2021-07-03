@@ -897,8 +897,17 @@ Section 12 API Authentication and security(Task App)
         
     106.JSON Web Tokens 
 
+        json web tokens work basically like cookies
         npm i jsonwebtoken@8.4.0  
             require: const jwt = require('jsonwebtoken')
+
+    107. Generating Authentication Tokens
+
+    CHALLANGE: have signup send back auth token
+
+    1. Generate a token for the saved user
+    2. Send back both the token and the user
+    3. Create a new user from Postman and confirm the token is there
 
 
 
