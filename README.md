@@ -843,8 +843,27 @@ sec 11: REST API's and mongoose
         app.listen(port, () => {
             console.log(`Server is up on port ${port}`)
         })
-        
+
     100. Resource Dleting Endpoints
+
+    101. Seperate Route Files
+
+        in src dir make ruoters dir
+            in it touch user.js
+
+        CHALLANGE: Create task router
+
+        1. Create new file that creates/exports new router
+        2.Move all task routes over
+        3. Load in and use that router with express app
+        4. test work
+
+        SOLUTION:
+            in src/routers make task.js file
+
+            give it its connection logic:
+                nst Task = require('../models/task') // requier task schema
+                const router = new express.Router()
 
 
         
