@@ -6,6 +6,22 @@ const taskRouter = require('./routers/task')
 const app = express() 
 const port = process.env.PORT || 3000 // seting up for heroku deploument
 
+// app.use((req, res, next) => { 
+//    if (req.method === 'GET') {
+//     res.send('GET requests are disabled')
+//    } else {
+//        next()
+//    }
+// })
+
+app.use((req, res, next) => {
+    if (req) {
+        res.send(' Site is down for maintenance')
+    } else {
+        next()
+    }
+})
+
 app.use(express.json()) //automatically parse incoming json to an object so we can access it in our request handler 
 app.use(userRouter)
 app.use(taskRouter)

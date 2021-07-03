@@ -903,13 +903,40 @@ Section 12 API Authentication and security(Task App)
 
     107. Generating Authentication Tokens
 
-    CHALLANGE: have signup send back auth token
+        CHALLANGE: have signup send back auth token
 
-    1. Generate a token for the saved user
-    2. Send back both the token and the user
-    3. Create a new user from Postman and confirm the token is there
+        1. Generate a token for the saved user
+        2. Send back both the token and the user
+        3. Create a new user from Postman and confirm the token is there
+
+        SOLUTION: 
+
+        in my new users route:
+            const token = await user.generateAuthToken()
+            res.status(201).send({ user, token })
 
 
+    108. Express Middleware
+
+        Without middleware: new request -> run route handler
+
+        with middleware: new request -> do something -> run route handler
+
+        CHALLANGE : Setup middleware for maintenance mode
+
+        1. Register a new middleware function
+        2. Send back a maintenanc message with a 503 status code
+        3. Try your requests from the server and confirm status/message shows
+
+        SOLUTION: 
+
+            app.use((req, res, next) => {
+                if (req) {
+                    res.send(' site is down for maintenance')
+                } else {
+                    next()
+                }
+            })
 
     
 
