@@ -895,7 +895,10 @@ Section 12 API Authentication and security(Task App)
 
     105. Logging in Users
         
-        
+    106.JSON Web Tokens 
+
+        npm i jsonwebtoken@8.4.0  
+            require: const jwt = require('jsonwebtoken')
 
 
 
