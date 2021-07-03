@@ -13,6 +13,15 @@ router.post('/users',  async(req, res) => { // adding async chabges behavior of 
     }
 })
 
+router.post('/users/login', async (req, res) => {
+    try {
+        const user = await User.findByCredentials(req.body.email, req.body.password)
+        res.send(user)
+    } catch (e) {
+        res.status(400).send()
+    }
+})
+
 router.get('/users', async(req, res) => { // users get route
     
     try{ // if promise is fufilled

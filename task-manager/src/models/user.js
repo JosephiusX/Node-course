@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({ // seting up schema
     },
     email: {
         type: String,
+        unique: true, //  error if an email in db is already in use
         required: true,
         trim: true,
         lowercase:true, // converts email to lowercase before saving
@@ -40,6 +41,22 @@ const userSchema = new mongoose.Schema({ // seting up schema
         }  
     }
 })
+
+userSchema.statics.findByCredentials = async (email, password) => {
+    const user = await User.findOne({email}) // same as email: email
+
+    if (!user) { // if that dosent work
+        throw new Error('Unable to login')
+    } // otherwise
+
+    const isMatch = await bcrypt.compare(password, user.password)
+
+    if(!isMatch) {
+        throw new Error('Unable to login')
+    }
+
+    return user
+}
 
 // Password hashed onsave Middleware
 userSchema.pre('save', async function (next) { // apply middleware to userSchema, Pre runs action before save , we need a regular function instead of an arrow because of the this binding, pass next as paramiter
