@@ -947,6 +947,31 @@ Section 12 API Authentication and security(Task App)
 
      110. Advanced Postman
 
+        adding environments and environment variables
+
+        copy and paste authentication token from the read profile header without the Bearer part 
+        delete the header
+        in authorization tab select type Bearer
+        insert token save and it works like before when I send
+
+        now change the type to: inherit auth from parent
+
+        navigate to task app and click:  ... > edit
+
+        under authorization tab select auth type of bearer token
+        enter token in that slot. 
+
+        now its available to all the routes
+
+        in Login and Create user routes change authorization to no auth, they dont need authentication
+
+        now we edit the collection again
+        under the authorization tab we replace the token with: {{authToken}}
+
+        set Read Users Auth type to Bearer
+        along with any other route that needs authentication
+
+        
     
 
             

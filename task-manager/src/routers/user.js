@@ -25,19 +25,19 @@ router.post('/users/login', async (req, res) => {
     }
 })
 
-router.get('/users', auth, async (req, res,) => { // users get route
-    try{ // if promise is fufilled
-        const users = await User.find({}) // await User.find({}) and assign it to users when fufilled
-        res.send(users) // renders only id above await is fufilled
-    } catch (e) { // if above await is rejected ( error as input)
-        res.status(500).send(e) // respond with status of server error and send error
-    }
-})
+// router.get('/users', auth, async (req, res,) => { // users get route
+//     try{ // if promise is fufilled
+//         const users = await User.find({}) // await User.find({}) and assign it to users when fufilled
+//         res.send(users) // renders only id above await is fufilled
+//     } catch (e) { // if above await is rejected ( error as input)
+//         res.status(500).send(e) // respond with status of server error and send error
+//     }
+// })
 
 
-// router.get('/users/me', auth, async(req, res) => { // users get route
-//     res.send(req.user)
-//  })
+router.get('/users/me', auth, async(req, res) => { // users get route
+    res.send(req.user)
+ })
 
 router.get('/users/:id', async(req, res) => { // view user by id
     const _id = req.params.id // getting the id from the query string
