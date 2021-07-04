@@ -943,6 +943,9 @@ Section 12 API Authentication and security(Task App)
         in source mkdir middleware
 
      **************************** dosent seem to be working and idk why
+     the space after Bearer in the auth file was nessssary in this case
+
+     110. Advanced Postman
 
     
 
