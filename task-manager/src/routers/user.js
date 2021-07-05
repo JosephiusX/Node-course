@@ -25,15 +25,28 @@ router.post('/users/login', async (req, res) => {
     }
 })
 
-// router.get('/users', auth, async (req, res,) => { // users get route
-//     try{ // if promise is fufilled
-//         const users = await User.find({}) // await User.find({}) and assign it to users when fufilled
-//         res.send(users) // renders only id above await is fufilled
-//     } catch (e) { // if above await is rejected ( error as input)
-//         res.status(500).send(e) // respond with status of server error and send error
-//     }
-// })
+router.post('/users/logout', auth, async (req, res) => { // logout route
+    try {
+        req.user.tokens = req.user.tokens.filter((token) => {
+            return token.token !== req.token
+        })
+        await req.user.save()
+        
+        res.send()
+    } catch (e) {
+        res.status(500).send()
+    }
+})
 
+router.post('/users/logoutAll', auth, async (req, res) => {
+    try {
+        req.user.tokens = []
+        await req.user.save()
+        res.send() // sends 200 indicating things went well
+    } catch (e) {
+        res.status(500).send()
+    }
+})
 
 router.get('/users/me', auth, async(req, res) => { // users get route
     res.send(req.user)

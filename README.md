@@ -971,7 +971,26 @@ Section 12 API Authentication and security(Task App)
         set Read Users Auth type to Bearer
         along with any other route that needs authentication
 
-        
+    111 . Logging Out
+
+        CHALLANGE : Create a way to logout all sessions
+
+        1. Setup POST /users/logoutAll
+        2. Create the routerhandler to wipe the tokens array -send 200 or 500
+        3. Test your work
+            -Login a few times and logout of all. Check databases
+
+        SOLUTION : 
+
+        router.post('/users/logoutAll', auth, async (req, res) => {
+            try {
+                req.user.tokens = []
+                await req.user.save()
+                res.send() 
+            } catch (e) {
+                res.status(500).send()
+            }
+        })
     
 
             
