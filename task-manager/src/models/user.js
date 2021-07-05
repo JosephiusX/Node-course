@@ -49,6 +49,16 @@ const userSchema = new mongoose.Schema({ // seting up schema
     }]
 })
 
+userSchema.methods.toJSON = function () {
+    const user = this
+    const userObject = user.toObject()
+
+    delete userObject.password
+    delete userObject.tokens
+
+    return userObject
+}
+
 userSchema.methods.generateAuthToken = async function () {
     const user = this
     const token = jwt.sign({ _id: user._id.toString() }, 'thisismynewcourse')
@@ -60,7 +70,7 @@ userSchema.methods.generateAuthToken = async function () {
 }
 
 
-userSchema.statics.findByCredentials = async (email, password) => {
+userSchema.statics.findByCredentials = async (email, password) => {// removes unessessary data from response
     const user = await User.findOne({email}) // same as email: email
 
     if (!user) { // if that dosent work

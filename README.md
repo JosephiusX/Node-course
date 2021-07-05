@@ -980,10 +980,6 @@ Section 12 API Authentication and security(Task App)
         3. Test your work
             -Login a few times and logout of all. Check databases
 
-    112. Hiding Private Data
-
-        
-
         SOLUTION : 
 
         router.post('/users/logoutAll', auth, async (req, res) => {
@@ -995,6 +991,23 @@ Section 12 API Authentication and security(Task App)
                 res.status(500).send()
             }
         })
+
+    112. Hiding Private Data
+
+        add to user model file:
+        
+            userSchema.methods.toJSON = function () {
+            const user = this
+            const userObject = user.toObject()
+
+            delete userObject.password
+            delete userObject.tokens
+
+            return userObject
+        }
+
+    113. Authenticating User endpoints
+
     
 
             
