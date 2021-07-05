@@ -1,10 +1,13 @@
 const express = require('express') // require express
 const Task = require('../models/task') // requier task schema
+const auth = require('../middleware/auth')
 const router = new express.Router() // require router
 
-router.post('/tasks', async(req, res) => { // post a task route
-    const task = new Task(req.body) // task is equivilant to the json we place in the request body
-
+router.post('/tasks', auth, async(req, res) => { // post a task route
+    const task = new Task({
+       ...req.body,
+       owner: req.user._id
+    })
     try{ // if promise is fufilled
         await task.save() // await saving req.body 
         res.status(201).send(task) // if above is fufilled we set status and send task
