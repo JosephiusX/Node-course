@@ -995,7 +995,7 @@ Section 12 API Authentication and security(Task App)
     112. Hiding Private Data
 
         add to user model file:
-        
+
             userSchema.methods.toJSON = function () {
             const user = this
             const userObject = user.toObject()
@@ -1007,6 +1007,34 @@ Section 12 API Authentication and security(Task App)
         }
 
     113. Authenticating User endpoints
+
+        CHALLANGE: Refactor the update profile route
+
+        1. update the url to /users/me
+        2. Add the  authentication middleware into the mix
+        3. Use the existing user document instead of fetching via param id
+        4. Test your work in Postman
+
+        SOLITION :
+
+                router.patch('/users/me', auth, async (req, res) => { 
+                const updates = Object.keys(req.body)
+                const allowedUpdates = ['name', 'email', 'password', 'age']
+                const isValidOperation = updates.every((update) => allowedUpdates.includes(update)) array than returns true else returns false
+
+                if(!isValidOperation) { // if it did not return true
+                    return res.status(400).send({error: 'Invalid updates!'})
+                }
+
+                try { // if promise is ufilled
+
+                    updates.forEach((update) => req.user[update] = req.body[update])
+                    await req.user.save()
+                    res.send(user) // send user
+                } catch (e) { // if await is rejected
+                    res.status(400).send(e) // send bad request error
+                }
+            })
 
     
 

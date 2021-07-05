@@ -52,23 +52,8 @@ router.get('/users/me', auth, async(req, res) => { // users get route
     res.send(req.user)
  })
 
-router.get('/users/:id', async(req, res) => { // view user by id
-    const _id = req.params.id // getting the id from the query string
 
-    try { // if promise is fufilled
-        const user = await User.findById(_id) // await result of User.findById and assign it to user const
-        
-        if (!user) { // if no user with said id as written above
-            return res.status(404).send() // return error stopping code
-        } // otherwise
-
-        res.send(user) // render the user
-    } catch (e) {       // if await is rejected
-        res.status(500).send() // set status server error and send
-    }    
-})
-
-router.patch('/users/:id', async (req, res) => { // route for updating users by id
+router.patch('/users/me', auth, async (req, res) => { // route for updating users by id
     const updates = Object.keys(req.body) // the object keys on request body  equivilant to updates
     const allowedUpdates = ['name', 'email', 'password', 'age']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update)) // if everything in updates array is one of the items in allowedUpdates array than returns true else returns false
@@ -78,31 +63,19 @@ router.patch('/users/:id', async (req, res) => { // route for updating users by 
     }
 
     try { // if promise is ufilled
-        const user = await User.findById(req.params.id)
 
-        updates.forEach((update) => user[update] = req.body[update]) // bracket notation in this case  makes it more dynamic
-        await user.save()
-
-        // const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true}) //  await Promise find User by Id found in req.params.id , sending what we want changed in req.body, run validators and stuff on what we send in req.body, call the result user
-
-        if (!user) { // if there is no user
-            return res.status(404).send() // return not found and send and thats the end of it
-        } // otherwise
-        res.send(user) // send user
+        updates.forEach((update) => req.user[update] = req.body[update]) // bracket notation in this case  makes it more dynamic
+        await req.user.save()
+        res.send(req.user) // send user
     } catch (e) { // if await is rejected
         res.status(400).send(e) // send bad request error
     }
 })
 
-router.delete('/users/:id', async(req, res) => {
+router.delete('/users/me', auth, async(req, res) => {
     try {
-        const user = await User.findByIdAndDelete(req.params.id)
-
-        if(!user) {
-            return res.status(404).send()
-        }
-
-        res.send(user)
+        await req.user.remove()
+        res.send(req.user)
     } catch (e) {
         res.status(500).send()
     }
