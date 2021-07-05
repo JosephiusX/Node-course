@@ -980,6 +980,10 @@ Section 12 API Authentication and security(Task App)
         3. Test your work
             -Login a few times and logout of all. Check databases
 
+    112. Hiding Private Data
+
+        
+
         SOLUTION : 
 
         router.post('/users/logoutAll', auth, async (req, res) => {
