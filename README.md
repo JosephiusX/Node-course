@@ -1040,6 +1040,22 @@ Section 12 API Authentication and security(Task App)
 
             flabberghasted
 
+    115. Authenticating Task Endpoints
+
+        CHALLANGE:  Refactor GET /tasks
+
+        1. add authentication
+        2. Return tasks only for the authenticated user
+        3. Test your work!
+
+        CHALLANGE 2  Refactor Delete /tasks/:id
+
+        1. Add authentication
+        2. Find the task by _id?owner (findOneAndDelete)
+        3. Test your work!
+
+        
+
     
 
             
