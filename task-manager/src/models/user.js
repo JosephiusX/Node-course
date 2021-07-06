@@ -48,7 +48,9 @@ const userSchema = new mongoose.Schema({ // seting up schema
             required: true
         } 
     }]
-})
+}, {
+    timestamps: true
+}) 
 
 userSchema.virtual('tasks', {
     ref: 'Task',

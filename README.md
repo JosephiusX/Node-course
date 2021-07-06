@@ -1056,7 +1056,22 @@ Section 12 API Authentication and security(Task App)
 
     116. Cascade Delete Tasks
 
-        
+section 13: Sorting, Pagination, and Filtering (Task App)
+
+    118. Working with Timestamps
+
+        CHALLANGE: Refactor task model to add timestamps
+
+        1. Explicitly create schema
+        2. Setup timestamps
+        3. Create tasks from Postman to test work
+
+    119. Filtering Data
+
+    120. Paginating Data
+
+    121. Sorting Data
+
 
 
     
