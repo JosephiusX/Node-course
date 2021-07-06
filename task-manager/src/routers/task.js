@@ -15,14 +15,27 @@ router.post('/tasks', auth, async(req, res) => { // post a task route
         res.status(400).send(e) // set status bad request to and send
     }
 })
+// GET /tasks?completed=true
+// GET /tasks?limit=10&skip=20
+router.get('/tasks', auth, async (req, res) => { // read route task
+    const match =  {} // create match as an empty object
 
-router.get('/tasks', auth, async(req, res) => { // read route task
+    if (req.query.completed) { // if request query completed is true
+        match.completed = req.query.completed === 'true' // we set match objects completed value to request objects querys object completed keys value to true  
+      } // next
+
     try{
-        // const tasks = await Task.findOne({_id, owner: req.user._id}) // or
-        await req.user.populate('tasks').execPopulate()
-        res.send(req.user.tasks) // if above is resolved we send tasks
-    } catch (e) { // if its rejected
-        res.status(500).send(e) // we set the status to server error and send
+        await req.user.populate({ 
+            path: 'tasks',
+            match : match, // or just match for short 
+            options: { // for pagination
+                limit: parseInt(req.query.limit), // set the ammount that show equal to the quiry string limit value 
+                skip: parseInt(req.query.skip) // turning what i get from the query string to a number
+            }
+        }).execPopulate()
+        res.send(req.user.tasks)
+    } catch (e) {
+        res.status(500).send(e) 
     }
 })
 

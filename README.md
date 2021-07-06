@@ -1068,9 +1068,39 @@ section 13: Sorting, Pagination, and Filtering (Task App)
 
     119. Filtering Data
 
+        at the end of the lesson testing the file
+        
+        created four tasks / create task works
+        read tasks / read tasks works
+        read only completed tasks :
+            /tasks?completed=true
+        
     120. Paginating Data
 
+        in the task route in the req.user.populate object add :
+
+         options: {
+                limit: parseInt(req.query.limit)
+            }
+
+        now the number of comments that will show is equivilant to the limit query string:
+
+        localhost:3000/tasks?limit=3 : only three tasks show
+
+        CHALLANGE: Setup support for skip
+
+        1. Setup 'skip' option
+            -Parse query value to integer
+        2. Fire off some requests to test it's working
+            -Fetch the 1st pagge of 2 and then the 3rd page of 2
+            -Fetch the 1st page of 3 and then the 2nd page of 3
+
+            SOLUTION : skip: parseInt(req.query.skip)
+
+            to test: tasks?limit=2&skip=4
     121. Sorting Data
+
+
 
 
 
