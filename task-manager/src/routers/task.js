@@ -17,12 +17,19 @@ router.post('/tasks', auth, async(req, res) => { // post a task route
 })
 // GET /tasks?completed=true
 // GET /tasks?limit=10&skip=20
+// GET /tasks?sortBy=createdAt:desc
 router.get('/tasks', auth, async (req, res) => { // read route task
     const match =  {} // create match as an empty object
+    const sort = {}
 
     if (req.query.completed) { // if request query completed is true
         match.completed = req.query.completed === 'true' // we set match objects completed value to request objects querys object completed keys value to true  
       } // next
+
+      if(req.query.sortBy) {
+          const parts = req.query.sortBy.split(':') // whatever special character i want to use to seporate
+          sort[parts[0]] = parts[1] === 'desc' ? -1 : 1
+      }
 
     try{
         await req.user.populate({ 
@@ -30,7 +37,8 @@ router.get('/tasks', auth, async (req, res) => { // read route task
             match : match, // or just match for short 
             options: { // for pagination
                 limit: parseInt(req.query.limit), // set the ammount that show equal to the quiry string limit value 
-                skip: parseInt(req.query.skip) // turning what i get from the query string to a number
+                skip: parseInt(req.query.skip), // turning what i get from the query string to a number
+                sort // shorthand 
             }
         }).execPopulate()
         res.send(req.user.tasks)

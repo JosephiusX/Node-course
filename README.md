@@ -404,6 +404,7 @@ sec 9 Application Deployment (Weather App)
         install it as a dev(local) dependancy instead:
             npm install nodemon@1.2.0 --save-dev
  
+ 
         now nodemon command in the terminal wont work because its not installed globally anymore, but package.json scripts can use commands from locally installed modules
 
 sec 10 MongoDB and Promises(Task App)
@@ -1098,7 +1099,12 @@ section 13: Sorting, Pagination, and Filtering (Task App)
             SOLUTION : skip: parseInt(req.query.skip)
 
             to test: tasks?limit=2&skip=4
+
     121. Sorting Data
+
+            test work in postman:
+                /tasks?sortBy=createdAt:desc
+                /tasks?sortBy=createdAt:asc
 
 
 
