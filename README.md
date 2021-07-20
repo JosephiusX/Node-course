@@ -1176,7 +1176,13 @@ Sec 14 File Uploads ( task app)
             
     126. Handling Express Errors
         
+        CHALLANGE: clean up error handling
         
+        1. setup an error handler function
+        2. Send back a 400 with the error message
+        3. Test your work
+        
+    127            
 
 
 
