@@ -1164,7 +1164,7 @@ Sec 14 File Uploads ( task app)
         webcite for testing regular expressions:
             https://regex101.com
             
-    125. Validation Challange
+125. Validation Challange
     
         CHALLANGE:  add validation to avatar upload route
         
@@ -1174,7 +1174,7 @@ Sec 14 File Uploads ( task app)
             - upload larger files (should fail)
             - upload non-images (should fail)
             
-    126. Handling Express Errors
+126. Handling Express Errors
         
         CHALLANGE: clean up error handling
         
@@ -1182,7 +1182,26 @@ Sec 14 File Uploads ( task app)
         2. Send back a 400 with the error message
         3. Test your work
         
-    127            
+127. Adding Images to User Profile 
+    
+        add auth to post /users/me/avatar
+        
+        in user models add avatar field with a type of buffer         
+        
+        remove dest from multer upload object 
+        
+        add logic to the /users/me/avatar:
+            req.user.avatar = req.file.buffer
+            await req.user.save()
+            
+        make post an async function
+        
+        CHALLANGE: setuyp route to delete avatar
+        
+        1. setup DELETE /users/me/avatar
+        2. Add authentication
+        3. Set the field to undefined and save the user sending back a 200
+        4. test work by creating a new request for Task App in Postman. 
 
 
 
