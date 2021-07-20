@@ -1106,6 +1106,77 @@ section 13: Sorting, Pagination, and Filtering (Task App)
                 /tasks?sortBy=createdAt:desc
                 /tasks?sortBy=createdAt:asc
 
+Sec 14 File Uploads ( task app)
+
+    123. Adding Support for File Uploads
+    
+        support for uploading files:
+            npm i multer@1.4.1
+            
+        code for testing multer:
+            const multer = require('multer')
+            const upload = multer({
+                dest: 'images'
+            })
+            app.post('/upload', upload.single('upload'), (req, res) => {
+                res.send()
+            })
+            
+        to test , make a post request to:
+            localhost:3000/upload
+                in the body select form-data and write upload as a key and set the type to file. 
+                
+                then in the value select the image we want to upload
+                
+                send request and check in image file. 
+                
+                to preview write the file extension .jpg so vscode knows what to do with it.
+                
+        CHALLANGE: setup endpoint for avatar upload
+        
+        1. Add POST /users/me/avatar to use router
+        2. Setup multer to store uploads in an avatars directory
+        3. Choose name "avatar" for the key when registering the middleware
+        4. Semd back a 200 response form route handler
+        5. Test work. Create new Task App request and upload image
+        
+    124. Validating File Uploads
+    
+        add limits to multer object and set the filezize by bytes to 1000000
+        
+        now when testing in post man i can upload phili image because its under the limit but not fall image which is over the filesize limit.
+        
+        we add file filter to multer upload object:
+            fileFilter(req, file, cb) {
+                if (!file.originalname.endsWith('.pdf')) { // runs if file is not pdf
+                return cb(new Error('please upload a PDF'))
+                }
+                
+                
+                cb(undefined, true)
+            }
+            
+        test by trying to upload a file thats not a pdf:
+            should get an error.
+            
+        uploading a file that is a pdf should work fine
+                    
+        webcite for testing regular expressions:
+            https://regex101.com
+            
+    125. Validation Challange
+    
+        CHALLANGE:  add validation to avatar upload route
+        
+        1. limit the upload size to 1 mb
+        2. only allow jpg, jpeg, png
+        3. Test uour work!
+            - upload larger files (should fail)
+            - upload non-images (should fail)
+            
+    126. Handling Express Errors
+        
+        
 
 
 
