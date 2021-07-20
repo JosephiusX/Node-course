@@ -1209,6 +1209,14 @@ Sec 14 File Uploads ( task app)
         
         to test use the user id
             http://localhost:3000/users/60f73060faac880e2c785ca5/avatar
+            
+129. Auto-Cropping and Image Formatting
+
+        module for formatting and resizing images:
+            npm i sharp@0.21.1
+                version dosent download
+                
+        require sharp in user router
 
 
 
