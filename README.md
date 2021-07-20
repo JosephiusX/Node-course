@@ -1203,6 +1203,13 @@ Sec 14 File Uploads ( task app)
         3. Set the field to undefined and save the user sending back a 200
         4. test work by creating a new request for Task App in Postman. 
 
+128. Serving up files
+
+        setup get /users/:id/avatar route
+        
+        to test use the user id
+            http://localhost:3000/users/60f73060faac880e2c785ca5/avatar
+
 
 
 
