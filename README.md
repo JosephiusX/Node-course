@@ -1039,8 +1039,17 @@ Section 12 API Authentication and security(Task App)
 
     114. The User/Task Relationship
 
-            flabberghasted
-
+            set up owner field on task model
+                in it setup type, required, and ref
+                
+            setup virtual attribute on user schema that refrences Task like so:
+                
+                userSchema.virtual('tasks', {
+                    ref: 'Task',
+                    localField: '_id',
+                    foreignField: 'owner'
+                })
+            
     115. Authenticating Task Endpoints
 
         CHALLANGE:  Refactor GET /tasks
@@ -1196,7 +1205,7 @@ Sec 14 File Uploads ( task app)
             
         make post an async function
         
-        CHALLANGE: setuyp route to delete avatar
+        CHALLANGE: setup route to delete avatar
         
         1. setup DELETE /users/me/avatar
         2. Add authentication
@@ -1217,6 +1226,17 @@ Sec 14 File Uploads ( task app)
                 version dosent download
                 
         require sharp in user router
+        
+sec 15: Sending Emails (task app)
+
+131. Exploring SendGrid
+
+        setup an accoutn:
+            sendgrid.com
+            
+            
+
+        
 
 
 

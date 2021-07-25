@@ -26,12 +26,13 @@ const userSchema = new mongoose.Schema({ // seting up schema
         type: String,
         required: true,
         trim: true,
-        minlength: 7,
-        validate(value){
-            if(value.includes('password')) {
-                throw new Error('password cannot contain "password"')
-            }
-        }
+        minlength: 1
+        // ,
+        // validate(value){
+        //     if(value.includes('password')) {
+        //         throw new Error('password cannot contain "password"')
+        //     }
+        // }
     },
     age: {
         type: Number,

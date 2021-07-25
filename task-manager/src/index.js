@@ -19,12 +19,6 @@ app.post('/upload', (req, res) => {
 })
 
 
-
-
-
-
-
-
 app.use(express.json()) //automatically parse incoming json to an object so we can access it in our request handler 
 app.use(userRouter)
 app.use(taskRouter)
@@ -33,4 +27,18 @@ app.listen(port, () => {
     console.log(`Server is up on port ${port}`)
 })
 
+const Task = require('./models/task')
+const User = require('./models/user')
 
+
+const main = async () => {
+    // const task = await Task.findById('60fdabe56f839035a405c651')
+    // await task.populate('owner').execPopulate()
+    // console.log(task.owner);
+    
+    const user = await User.findById('60fdabd76f839035a405c64c')
+    await user.populate('tasks').execPopulate()
+    console.log(user.tasks);
+}
+
+main()
