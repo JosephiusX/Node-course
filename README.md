@@ -69,7 +69,7 @@ sec3 10
 
         in utils touch forcast.js
 
-        weatherstack base url with key and long lat: 
+        weatherstack base url with key and long lat:
             'https://api.weatherstack.com/current?access_key=fcbecc958bca8e867c813ba8ff9825de&query=' + latitude + ',' + longitude + '&units=f'
 
     38. Callback Chaining
@@ -101,10 +101,10 @@ sec3 10
         make web-server dir
             in npm init -y
             npm i express@4.16.4
-        
+
         in web-server dir make sub dir called src
             in it touch app.js
-        
+
         challange: goal : seup two new routes
 
         1. setup am about route and render a page title
@@ -123,7 +123,7 @@ sec3 10
         in public dir add index.html
 
         console.log(__dirname) // path to the directory, C:\Users\gramk\OneDrive\Desktop\Node-course\web-server\src
-        
+
         console.log(__filename) // path to the file, C:\Users\gramk\OneDrive\Desktop\Node-course\web-server\src\app.js
 
         require path core node module
@@ -220,7 +220,7 @@ sec3 10
     52. Styling Application Part 2
 
 sec 8 Accessing API from Browser(Weather App)
-    explored express learning how we can serve json and html,  express to serve contents of entire directorys and work with templating engines.
+explored express learning how we can serve json and html, express to serve contents of entire directorys and work with templating engines.
 
     54. The Query String
 
@@ -257,7 +257,7 @@ sec 8 Accessing API from Browser(Weather App)
          - If error property, print error
          - If no error property, print location and forcast
         3. Refresh the browser and test
-    
+
     58. Creating a search form
 
         CHALLANGE: Use input value to get weather
@@ -266,7 +266,7 @@ sec 8 Accessing API from Browser(Weather App)
         2. Use the search text as the address query string value
         3. Submit the form with a valid and invalid value to test
 
-    59. Wire up the user interface    
+    59. Wire up the user interface
 
     CHALLANGE: Render contern to paragraph
 
@@ -318,7 +318,7 @@ sec 9 Application Deployment (Weather App)
 
         run this command to see if im up and running:
              eval $(ssh-agent -s)
-        result should look something like:  
+        result should look something like:
              eAgent pid 840
 
         then:
@@ -335,7 +335,7 @@ sec 9 Application Deployment (Weather App)
 
             create application from the root of our project:
                 heroku create 'project name' , or if empty random one specified
-            we get 2 things from this   
+            we get 2 things from this
                 an address where the app is hosted
                 and an address where to put the github
 
@@ -356,7 +356,7 @@ sec 9 Application Deployment (Weather App)
             then commit with message:
                 git commit -m
             see that heroku remote was added:
-                git remote  
+                git remote
 
             build the app:
                 git push heroku main
@@ -370,7 +370,7 @@ sec 9 Application Deployment (Weather App)
 
         nodemon src/app.js -e js,hbs
 
-        make changes, add and commit changes 
+        make changes, add and commit changes
 
         git push heroku main.
 
@@ -403,8 +403,8 @@ sec 9 Application Deployment (Weather App)
 
         install it as a dev(local) dependancy instead:
             npm install nodemon@1.2.0 --save-dev
- 
- 
+
+
         now nodemon command in the terminal wont work because its not installed globally anymore, but package.json scripts can use commands from locally installed modules
 
 sec 10 MongoDB and Promises(Task App)
@@ -423,7 +423,7 @@ sec 10 MongoDB and Promises(Task App)
 
         google search:
             robo 3t option
-        on the cite we download the Robo 
+        on the cite we download the Robo
 
         when making a cannection i have to open the mongo window first
 
@@ -497,8 +497,8 @@ sec 10 MongoDB and Promises(Task App)
         my solution
             db.collection('documents').updateMany({
                     completed: false
-                }, { 
-                    $set:{ 
+                }, {
+                    $set:{
                         completed: true
                     }
                 }).then((result) => {
@@ -526,7 +526,7 @@ sec 10 MongoDB and Promises(Task App)
             }).catch((error) => {
                 console.log(error)
             })
-    
+
 sec 11: REST API's and mongoose
 
     83. Setting up Mongoose
@@ -563,11 +563,11 @@ sec 11: REST API's and mongoose
 
         chore.save().then(() =>{
             console.log(chore)
-        }).catch((error) => { 
+        }).catch((error) => {
             console.log('Error!', error)
         })
-    
-    85. Data Validation and Sanitization: Part 1 
+
+    85. Data Validation and Sanitization: Part 1
 
         validator is a library on npm that has tools for validating diffrent things
 
@@ -603,7 +603,7 @@ sec 11: REST API's and mongoose
         2. Make completed optional and default it to false
         3. Test your work with and without errors
 
-        SOLUTION: 
+        SOLUTION:
         const task = mongoose.model('task', {
                 task: {
                     type: String,
@@ -691,9 +691,9 @@ sec 11: REST API's and mongoose
                 app.post('/task', (req, res) => {
                     const study = new Task(req.body)
 
-                    study.save().then(() => { 
+                    study.save().then(() => {
                         res.send(task)
-                    }).catch((e) => { 
+                    }).catch((e) => {
                         res.status(400).send(e)
                     })
                 })
@@ -711,7 +711,7 @@ sec 11: REST API's and mongoose
         1. Create an endpoint for fetching all tasks
         2. Create an endpoint for fetching a task by its id
         3. Setup new requests in Postman and test your work
-        
+
         RESULTS:
 
             app.get('/task', (req, res) => {
@@ -734,11 +734,11 @@ sec 11: REST API's and mongoose
                 }).catch((e) => {
                     res.status(500).send()
                 })
-                
+
             })
 
     93. Promise Chaining
-        
+
         in task manager make a playground folder
             in it touch promise-chaining.js
 
@@ -754,13 +754,13 @@ sec 11: REST API's and mongoose
         4. Get and print the total number of incomplete tasks
         5. Test your work!
 
-        SOLUTION : 
+        SOLUTION :
             require('../src/db/mongoose')
             const Task = require('../src/models/task')
 
             Task.findByIdAndDelete('60dcc0d83f9d131174d42b7d', {task: 'get a life' }).then((task) => { // selecting the task by id and and changing the value of task, then
                 console.log(task)
-                return Task.countDocuments({ completed: false }) // count 
+                return Task.countDocuments({ completed: false }) // count
             }).then((result) => {
                 console.log(result)
             }).catch((e) => {
@@ -795,7 +795,7 @@ sec 11: REST API's and mongoose
 
     97. Integrating Async/Await
 
-        
+
         CHALLANGE: Refactor task routes to use async/await
 
         1. Refactor
@@ -826,14 +826,14 @@ sec 11: REST API's and mongoose
             const allowedUpdates = ['task', 'completed']
             const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
-            if(!isValidOperation) { 
-                return res.status(400).send({error: 'Invalid updates!'}) 
+            if(!isValidOperation) {
+                return res.status(400).send({error: 'Invalid updates!'})
             }
 
             try{
                 const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true})
-                if (!task) { 
-                    return res.status(404).send() 
+                if (!task) {
+                    return res.status(404).send()
                 }
                 res.send(task)
             } catch (e) {
@@ -881,25 +881,25 @@ Section 12 API Authentication and security(Task App)
         1. Find the task
         2. Alter the task properties
         3.Save the task
-        4. Test your work by updating a task from postman. 
+        4. Test your work by updating a task from postman.
 
         SOLUTION:
-        
+
         delete this line:
             const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true})
 
         add this line:
             const task = await Task.findById(req.params.id)
 
-            updates.forEach((update) => task[update] = req.body[update]) 
+            updates.forEach((update) => task[update] = req.body[update])
             await task.save()
 
     105. Logging in Users
-        
-    106.JSON Web Tokens 
+
+    106.JSON Web Tokens
 
         json web tokens work basically like cookies
-        npm i jsonwebtoken@8.4.0  
+        npm i jsonwebtoken@8.4.0
             require: const jwt = require('jsonwebtoken')
 
     107. Generating Authentication Tokens
@@ -910,7 +910,7 @@ Section 12 API Authentication and security(Task App)
         2. Send back both the token and the user
         3. Create a new user from Postman and confirm the token is there
 
-        SOLUTION: 
+        SOLUTION:
 
         in my new users route:
             const token = await user.generateAuthToken()
@@ -929,7 +929,7 @@ Section 12 API Authentication and security(Task App)
         2. Send back a maintenanc message with a 503 status code
         3. Try your requests from the server and confirm status/message shows
 
-        SOLUTION: 
+        SOLUTION:
 
             app.use((req, res, next) => {
                 if (req) {
@@ -950,7 +950,7 @@ Section 12 API Authentication and security(Task App)
 
         adding environments and environment variables
 
-        copy and paste authentication token from the read profile header without the Bearer part 
+        copy and paste authentication token from the read profile header without the Bearer part
         delete the header
         in authorization tab select type Bearer
         insert token save and it works like before when I send
@@ -960,7 +960,7 @@ Section 12 API Authentication and security(Task App)
         navigate to task app and click:  ... > edit
 
         under authorization tab select auth type of bearer token
-        enter token in that slot. 
+        enter token in that slot.
 
         now its available to all the routes
 
@@ -981,13 +981,13 @@ Section 12 API Authentication and security(Task App)
         3. Test your work
             -Login a few times and logout of all. Check databases
 
-        SOLUTION : 
+        SOLUTION :
 
         router.post('/users/logoutAll', auth, async (req, res) => {
             try {
                 req.user.tokens = []
                 await req.user.save()
-                res.send() 
+                res.send()
             } catch (e) {
                 res.status(500).send()
             }
@@ -1018,7 +1018,7 @@ Section 12 API Authentication and security(Task App)
 
         SOLITION :
 
-                router.patch('/users/me', auth, async (req, res) => { 
+                router.patch('/users/me', auth, async (req, res) => {
                 const updates = Object.keys(req.body)
                 const allowedUpdates = ['name', 'email', 'password', 'age']
                 const isValidOperation = updates.every((update) => allowedUpdates.includes(update)) array than returns true else returns false
@@ -1041,15 +1041,15 @@ Section 12 API Authentication and security(Task App)
 
             set up owner field on task model
                 in it setup type, required, and ref
-                
+
             setup virtual attribute on user schema that refrences Task like so:
-                
+
                 userSchema.virtual('tasks', {
                     ref: 'Task',
                     localField: '_id',
                     foreignField: 'owner'
                 })
-            
+
     115. Authenticating Task Endpoints
 
         CHALLANGE:  Refactor GET /tasks
@@ -1079,12 +1079,12 @@ section 13: Sorting, Pagination, and Filtering (Task App)
     119. Filtering Data
 
         at the end of the lesson testing the file
-        
+
         created four tasks / create task works
         read tasks / read tasks works
         read only completed tasks :
             /tasks?completed=true
-        
+
     120. Paginating Data
 
         in the task route in the req.user.populate object add :
@@ -1118,10 +1118,10 @@ section 13: Sorting, Pagination, and Filtering (Task App)
 Sec 14 File Uploads ( task app)
 
     123. Adding Support for File Uploads
-    
+
         support for uploading files:
             npm i multer@1.4.1
-            
+
         code for testing multer:
             const multer = require('multer')
             const upload = multer({
@@ -1130,124 +1130,125 @@ Sec 14 File Uploads ( task app)
             app.post('/upload', upload.single('upload'), (req, res) => {
                 res.send()
             })
-            
+
         to test , make a post request to:
             localhost:3000/upload
-                in the body select form-data and write upload as a key and set the type to file. 
-                
+                in the body select form-data and write upload as a key and set the type to file.
+
                 then in the value select the image we want to upload
-                
-                send request and check in image file. 
-                
+
+                send request and check in image file.
+
                 to preview write the file extension .jpg so vscode knows what to do with it.
-                
+
         CHALLANGE: setup endpoint for avatar upload
-        
+
         1. Add POST /users/me/avatar to use router
         2. Setup multer to store uploads in an avatars directory
         3. Choose name "avatar" for the key when registering the middleware
         4. Semd back a 200 response form route handler
         5. Test work. Create new Task App request and upload image
-        
+
     124. Validating File Uploads
-    
+
         add limits to multer object and set the filezize by bytes to 1000000
-        
+
         now when testing in post man i can upload phili image because its under the limit but not fall image which is over the filesize limit.
-        
+
         we add file filter to multer upload object:
             fileFilter(req, file, cb) {
                 if (!file.originalname.endsWith('.pdf')) { // runs if file is not pdf
                 return cb(new Error('please upload a PDF'))
                 }
-                
-                
+
+
                 cb(undefined, true)
             }
-            
+
         test by trying to upload a file thats not a pdf:
             should get an error.
-            
+
         uploading a file that is a pdf should work fine
-                    
+
         webcite for testing regular expressions:
             https://regex101.com
-            
-125. Validation Challange
-    
-        CHALLANGE:  add validation to avatar upload route
-        
-        1. limit the upload size to 1 mb
-        2. only allow jpg, jpeg, png
-        3. Test uour work!
-            - upload larger files (should fail)
-            - upload non-images (should fail)
-            
-126. Handling Express Errors
-        
-        CHALLANGE: clean up error handling
-        
-        1. setup an error handler function
-        2. Send back a 400 with the error message
-        3. Test your work
-        
-127. Adding Images to User Profile 
-    
-        add auth to post /users/me/avatar
-        
-        in user models add avatar field with a type of buffer         
-        
-        remove dest from multer upload object 
-        
-        add logic to the /users/me/avatar:
-            req.user.avatar = req.file.buffer
-            await req.user.save()
-            
-        make post an async function
-        
-        CHALLANGE: setup route to delete avatar
-        
-        1. setup DELETE /users/me/avatar
-        2. Add authentication
-        3. Set the field to undefined and save the user sending back a 200
-        4. test work by creating a new request for Task App in Postman. 
 
-128. Serving up files
+125.  Validation Challange
 
-        setup get /users/:id/avatar route
-        
-        to test use the user id
-            http://localhost:3000/users/60f73060faac880e2c785ca5/avatar
-            
-129. Auto-Cropping and Image Formatting
+             CHALLANGE: add validation to avatar upload route
 
-        module for formatting and resizing images:
-            npm i sharp@0.21.1
-                version dosent download
-                
-        require sharp in user router
-        
+             1. limit the upload size to 1 mb
+             2. only allow jpg, jpeg, png
+             3. Test uour work!
+                 - upload larger files (should fail)
+                 - upload non-images (should fail)
+
+126.  Handling Express Errors
+
+             CHALLANGE: clean up error handling
+             1. setup an error handler function
+             2. Send back a 400 with the error message
+             3. Test your work
+
+127.  Adding Images to User Profile
+
+             add auth to post /users/me/avatar
+
+             in user models add avatar field with a type of buffer
+
+             remove dest from multer upload object
+
+             add logic to the /users/me/avatar:
+             req.user.avatar = req.file.buffer
+             await req.user.save()
+
+             make post an async function
+
+             CHALLANGE: setup route to delete avatar
+
+             1. setup DELETE /users/me/avatar
+             2. Add authentication
+             3. Set the field to undefined and save the user sending back a 200
+             4. test work by creating a new request for Task App in Postman.
+
+128.  Serving up files
+
+             setup get /users/:id/avatar route
+
+             to test use the user id
+             http://localhost:3000/users/60f73060faac880e2c785ca5/avatar
+
+129.  Auto-Cropping and Image Formatting
+
+             module for formatting and resizing images:
+             npm i sharp@0.21.1
+             version dosent download
+
+             require sharp in user router
+
 sec 15: Sending Emails (task app)
 
-131. Exploring SendGrid
+131.  Exploring SendGrid
 
-        setup an accoutn:
+            setup an accoutn:
             sendgrid.com
-            
-            
 
-        
+            choose option to integtate api
 
+            follow process layed out
 
-
-
-    
-
-            
+            create name for api key : Task App
 
 
+             in src create a new folder called emails
+             inside it touch account.js
+             in it setup api key variable
 
+             setup the email information
 
+            install sendgrid through npm:
+                npm i @sendgrid/mail@6.3.1
+                require in account.js
 
-     
-    
+                run the file to see if it works
+                node src/emails/account.js
