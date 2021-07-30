@@ -1252,3 +1252,5 @@ sec 15: Sending Emails (task app)
 
                 run the file to see if it works
                 node src/emails/account.js
+
+132.  Sending Welcome and Cancelation Emails
