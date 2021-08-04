@@ -1237,7 +1237,8 @@ sec 15: Sending Emails (task app)
 
             follow process layed out
 
-            create name for api key : Task App
+            create name for api key : Task-Manager-App:
+
 
 
              in src create a new folder called emails
@@ -1254,3 +1255,11 @@ sec 15: Sending Emails (task app)
                 node src/emails/account.js
 
 132.  Sending Welcome and Cancelation Emails
+
+            CHALLANGE:
+
+            1. Setup a new function for sending an email on cancelation
+                -email and name as args
+            2. Include their name in the email and ask why they canceled
+            3. Call it just after the account is removed
+            4. Run the request and check your inbox!

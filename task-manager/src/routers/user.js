@@ -4,7 +4,7 @@ const auth = require("../middleware/auth");
 const router = new express.Router();
 const multer = require("multer"); // upload npm lib
 const sharp = require("sharp");
-const { sendWelcomeEmail } = require("../emails/account");
+const { sendWelcomeEmail, sendGoodbyeEmail } = require("../emails/account");
 // Create user
 router.post("/users", async (req, res) => {
   // adding async chabges behavior of function from returning a value to returning a promise
@@ -84,6 +84,7 @@ router.patch("/users/me", auth, async (req, res) => {
 
 router.delete("/users/me", auth, async (req, res) => {
   try {
+    sendGoodbyeEmail(req.user.email, req.user.name);
     await req.user.remove();
     res.send(req.user);
   } catch (e) {
