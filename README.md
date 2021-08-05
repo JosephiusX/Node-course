@@ -1263,3 +1263,20 @@ sec 15: Sending Emails (task app)
             2. Include their name in the email and ask why they canceled
             3. Call it just after the account is removed
             4. Run the request and check your inbox!
+
+133.  Environment Variables
+
+            install env extension:
+                "env-cmd": "^8.0.2"
+
+            place privat keys in and link to them with process.env
+
+            update scripts in pacage.json:
+                    "dev": "env-cmd ./config/dev.env nodemon src/index.js"
+
+134.  Creating a production MongoDB Database.
+
+             im working on a mongodb atlas cluster thats already been created
+
+            **** i may need to whitelist the ip address by setting it to:
+                0.0.0.0/0
