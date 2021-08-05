@@ -1276,7 +1276,15 @@ sec 15: Sending Emails (task app)
 
 134.  Creating a production MongoDB Database.
 
-             im working on a mongodb atlas cluster thats already been created
+            im working on a mongodb atlas cluster thats already been created
 
             **** i may need to whitelist the ip address by setting it to:
                 0.0.0.0/0
+
+            click connect on the cluster > connect with mongodb
+
+            ***** may need to delete the extra ip address
+
+            ??? not sure if this section is working , when i connected to compass it showed me info for my Yelp-Camp app not my task-manager
+
+135.  Heroku Deployment
