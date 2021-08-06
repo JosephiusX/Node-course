@@ -1288,3 +1288,49 @@ sec 15: Sending Emails (task app)
             ??? not sure if this section is working , when i connected to compass it showed me info for my Yelp-Camp app not my task-manager
 
 135.  Heroku Deployment
+
+            delete playground in the task-manager directory
+
+            initalize as git repo:
+                cd ..  task-manager
+                git init
+            **** above may be an issue because its already in a git repo.
+
+            make sure git is not tracking config and node_modules with .gitignore file
+
+            add and make the first commit:
+                git add .
+                git commit -m 'Initial Commit'
+
+            create a new private repo for folder on github called task-manager-api
+
+            setup romote with commands provided on github
+
+            create heroku app and heroku remote
+                heroku create granville-task-manager
+
+            setup environment variables for heroku using heroku config:
+                heroku config:set key=value
+
+            check the values we have configured:
+                heroku config
+
+            remobe variable from config:
+                heroku config:unset <key>
+
+            navigate to mongodb atlas cluster and select connect again
+                this time select 'connect your application'
+
+            ******* I dont have a short SRV connection , Im trying the standard instead
+
+            add the mongodb variable for heroku in single quotes
+
+            port is maintained and managed by heroku itself, It is not needed in heroku config
+
+            push to heroku:
+                git push heroku master
+
+            copy the url and test in postman
+
+            in the task-manager-api production environment place heroku url with a label of url:
+                https://granville-task-manager.herokuapp.com
