@@ -1373,3 +1373,17 @@ sec 15: Sending Emails (task app)
                 --watch
 
             after running npm test press w to see usage options.
+
+141.  Testing an Express Application: Part 1
+
+            in config touch test.env:
+                copy from dev.env but change Mongodb value to local host and and add -test to the database name
+
+            update the test script in package.json
+                "test": "env.cmd ./config/test.env jest --watch"
+            we can add a jest root property under scripts to store our jest config:
+                "jest": {
+                    "testEnvironment": "node"
+                },
+
+142.  Testing an Express Application: Part II
