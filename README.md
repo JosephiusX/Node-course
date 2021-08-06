@@ -1387,3 +1387,10 @@ sec 15: Sending Emails (task app)
                 },
 
 142.  Testing an Express Application: Part II
+
+            npm i supertest@3.4.1 --save-dev
+
+            in test dir touch user.test.js
+
+            in source touch app.js
+
