@@ -1334,3 +1334,33 @@ sec 15: Sending Emails (task app)
 
             in the task-manager-api production environment place heroku url with a label of url:
                 https://granville-task-manager.herokuapp.com
+
+136.  Section Intro: Testing Node.js
+
+            Instead of manually testing our app manually we can automate that process
+
+137.  Jest Testing Framework
+
+            Why test?
+            -saves time
+            -creates reliable software
+            -gives flexibility to developers
+                -refactoring
+                -collaborating
+                -profiling
+            -peace of mind
+
+            jestjs.io
+            install as dev dependancy:
+                npm i jest@23.6.0 --save-dev
+
+            setup a new script in package.json:
+                "test": "jest"
+
+            make test file in root dir
+            in it touch math.test.js
+
+138.  Writing Tests and Assertions
+
+            in scr touch math.js file
+            there are all kinds of asertions in we can use in the docs
