@@ -219,8 +219,7 @@ sec3 10
 
     52. Styling Application Part 2
 
-sec 8 Accessing API from Browser(Weather App)
-explored express learning how we can serve json and html, express to serve contents of entire directorys and work with templating engines.
+sec 8 Accessing API from Browser(Weather App) explored express learning how we can serve json and html, express to serve contents of entire directorys and work with templating engines.
 
     54. The Query String
 
@@ -1394,3 +1393,29 @@ sec 15: Sending Emails (task app)
 
             in source touch app.js
 
+143.  Jest Setup and Teardown
+
+            in the jest documemtation under 'Setup and Teardown' is the information for this topic.
+
+            CHALLANGE: Test login failior
+
+            1. Create 'should not login nonexistant user
+            2.
+            send off the request with bad credentials
+            3. Expect the correct status response
+            4. test work!
+
+            SOLUTION:
+            test('Should not login nonexistant user', async () => {
+                await request(app)
+                    .post('/users/login')
+                    .send({
+                        email: 'bob',
+                        password: 'bob@gmail.com',
+                    })
+                    .expect(400)
+            })
+
+144.  Testing with Authentication
+
+alsdfo
