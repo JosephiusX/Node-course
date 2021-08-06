@@ -1366,3 +1366,10 @@ sec 15: Sending Emails (task app)
             there are all kinds of asertions in we can use in the docs
 
 139.  Writing Your Own Tests
+
+140.  Testing Asynchronous Code
+
+            add command line arg to test script in package.json to watch for changes:
+                --watch
+
+            after running npm test press w to see usage options.
