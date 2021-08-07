@@ -1539,3 +1539,8 @@ sec 15: Sending Emails (task app)
                   SOLUTION:2
 
 148.  Setup Task Test Suite
+
+            In tests dir touch task.test.js
+
+            in fixtures touch db.js
+
