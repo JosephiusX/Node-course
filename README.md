@@ -1418,4 +1418,25 @@ sec 15: Sending Emails (task app)
 
 144.  Testing with Authentication
 
-alsdfo
+            CHALLANGE: Test delete account
+            1. Create "Should Delete account for user:
+                -Setup auth header and expect correct status code
+            2. Create "Should not delete account for unauthenticated user"
+                - Expect correct status code
+            3. Test!!!!
+
+            SOLUTIONS:
+
+            test('should delete account for user', async () => {
+                await request(app)
+                    .delete('/users/me')
+                    .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
+                    .send(userOne)
+                    .expect(200)
+            })
+
+            test('should not delete account for unauthenticated user', async () => {
+                    await request(app).delete('/users/me').expect(401)
+            })
+
+145.  Advanced Assertions
