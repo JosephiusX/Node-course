@@ -1440,3 +1440,69 @@ sec 15: Sending Emails (task app)
             })
 
 145.  Advanced Assertions
+
+                  CHALLANGE: Validate new token is saved
+
+                  1. Fetch the user from the database
+                  2. Assert that token response matches user second token
+                  3. Test your work!
+
+                  SOLUTION:
+
+                    Change :
+
+                        test('Should login existing user', async () => {
+                            await request(app)
+                                .post('/users/login')
+                                .send({
+                                    email: userOne.email,
+                                    password: userOne.password,
+                                })
+                                .expect(200)
+                        })
+
+                    To:
+
+                        test('Should login existing user', async () => {
+                            const response = await request(app)
+                                .post('/users/login')
+                                .send({
+                                    email: userOne.email,
+                                    password: userOne.password,
+                                })
+                                .expect(200)
+
+                            const user = await User.findById(userOneId)
+                            expect(response.body.token).toBe(user.tokens[1].token)
+                        })
+
+                    CHALLANGE: Validate user is removed
+
+                    1. Fetch the user from the database
+                    2. Assert null response (use assertion from signup test)
+                    3. Test your work!
+
+                    SOLUTION:
+
+                        Change:
+
+                            test('should delete account for user', async () => {
+                                await request(app)
+                                    .delete('/users/me')
+                                    .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
+                                    .send(userOne)
+                                    .expect(200)
+                            })
+
+                        To:
+                            test('should delete account for user', async () => {
+                                await request(app)
+                                    .delete('/users/me')
+                                    .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
+                                    .send(userOne)
+                                    .expect(200)
+                                const user = await User.findById(userOneId)
+                                expect(user).toBeNull()
+                            })
+
+146.  Mocking Libraries
