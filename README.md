@@ -1506,3 +1506,8 @@ sec 15: Sending Emails (task app)
                             })
 
 146.  Mocking Libraries
+
+                setup directory for __mocks__ in test dir"
+                    mkdir __mocks__
+                inside that mkdir @sendgrid
+                inside that touch mail.js
