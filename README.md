@@ -1544,3 +1544,38 @@ sec 15: Sending Emails (task app)
 
             in fixtures touch db.js
 
+149.  Testing with task data
+
+            CHALLANGE: Test GET /task
+            1. Request all tasks for user one
+            2. Assert the correct status code
+            3. Check the length of the response array is 2
+            4. Test work!
+
+            SOLUTION:
+                test('should fetch user task', async () => {
+                    const response = await request(app)
+                        .get('/tasks')
+                        .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
+                        .send()
+                        .expect(200)
+                    expect(response.body.length).toEqual(2)
+                })
+
+            CHALLANGE: Test delete task security
+            1. Attempt to have the second user delete the first task (should fail)
+                - Setup nessessary exports from db.js
+            2. Assert the failed status code
+            3. Assert the task is still in the database
+            4. Test work!
+
+            SOLUTIIN:
+                test('Should not delete other users tasks', async () => {
+                    const response = await request(app)
+                        .delete(`/tasks/${taskOne._id}`)
+                        .set('Authorization', `Bearer ${userTwo.tokens[0].token}`)
+                        .send()
+                        .expect(404)
+                    const task = await Task.findById(taskOne._id)
+                    expect(task).not.toBeNull()
+                })
