@@ -1655,3 +1655,9 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
                 npm i nodemon --save-dev
                 "start": "node src/index.js",
               "dev": "nodemon src/index.js"
+
+153.  WebSockets
+
+            -webSockets allow for full-duplex communication(2 way)
+            -webSocket is a seperate protocol form HTTP
+            -Presistent connection between client and server
