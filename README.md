@@ -1507,7 +1507,35 @@ sec 15: Sending Emails (task app)
 
 146.  Mocking Libraries
 
-                setup directory for __mocks__ in test dir"
+                setup directory for __mocks__ in tests dir"
                     mkdir __mocks__
                 inside that mkdir @sendgrid
                 inside that touch mail.js
+
+147.  Wrapping up User Tests
+
+                  CHALLANGE: Test user updates
+                  1. Create "Should update valid user fields"
+                      - Update the name of the test user
+                      - Check the data to confirm it's changed
+                  2. Create 'Should not update invalid user fields"
+                      - Update a "location" field and expect error status code
+                  3. Test your work!
+
+                  SOLUTION:1
+
+                      test('Should update valid user fields', async () => {
+                        await request(app)
+                            .patch('/users/me')
+                            .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
+                            .send({
+                                name: 'Jess',
+                            })
+                            .expect(200)
+                        const user = await User.findById(userOneId)
+                        expect(user.name).toEqual('Jess')
+                    })
+
+                  SOLUTION:2
+
+148.  Setup Task Test Suite
