@@ -1674,3 +1674,5 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
 
             add another script to index.html:
               <script src="/js/chat.js"></script>
+
+155.  Socket.io Events
