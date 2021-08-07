@@ -1661,3 +1661,16 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
             -webSockets allow for full-duplex communication(2 way)
             -webSocket is a seperate protocol form HTTP
             -Presistent connection between client and server
+
+154.  Getting Started with Socket.io
+
+            npm i socket.io@2.2.0
+
+            make script in index.html:
+                <script src="/socket.io/socket.io.js"></script>
+
+            in public dir mkdir js
+                in it touch chat.js
+
+            add another script to index.html:
+              <script src="/js/chat.js"></script>
