@@ -1800,3 +1800,13 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
 
             momentjs.com:
                 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+164.  Timestamps for Location Messages
+
+            CHALLANGE: Add timestamps for location messages
+
+            1. Create generateLocationMessage and exprort
+                - {url: '', createdAt: 0}
+            2. Use generateLocationMessage when server emits location message
+            3. Update template to render time before the url
+            4. Compile the template with the URL
