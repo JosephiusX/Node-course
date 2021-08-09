@@ -1741,4 +1741,11 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
             3. Have the client print "location shared!" when acknowledged
             4. Test work!
 
-            SOLUTION:
+160.  Form and Button States
+
+            CHALLANGE: Disable the send location butto while location is being sent
+
+            1. Set up a selector at the top of the file
+            2. Disable the button just before getting the current position
+            3. Enable the button in the acknowledgment callback
+            4. Test work!
