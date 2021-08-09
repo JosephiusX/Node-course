@@ -1696,3 +1696,29 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
             4. Test your work!
 
 157.  Brodcasting Events
+
+158.  Sharing Your Location
+
+            CHALLANGE: Share coordinates with other users
+
+            1. Have client emit 'sendLocation' with an object as the data
+                -Object should contain latitude and longitude properties
+            2. Server should listen for " sendLocation"
+                -When fired, send a "message" to all connected clients "Location: long, lat'
+            3. Test your work!
+
+            SOLUTION:
+                    // in chat.js
+                navigator.geolocation.getCurrentPosition((position) => {
+                    // sending location from client to server
+                    socket.emit('sendLocation', {
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude,
+                    })
+                })
+
+                    // in index.js in the socket connection logic
+                    // recieve event on server
+                socket.on('sendLocation', (coords) => {
+                        io.emit('message', `Location: ${coords.latitude}, ${coords.longitude}`)
+                    })

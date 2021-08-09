@@ -22,6 +22,11 @@ io.on('connection', (socket) => {
 		io.emit('message', message) // io.emmit to sent to everybody
 	})
 
+	// recieve event on server
+	socket.on('sendLocation', (coords) => {
+		io.emit('message', `https://google.com/maps?q=${coords.latitude},${coords.longitude}`)
+	})
+
 	// code runs whenever client disconnects
 	socket.on('disconnect', () => {
 		io.emit('message', 'A user has left!') // sends message to clients still connected
