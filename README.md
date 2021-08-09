@@ -1697,6 +1697,10 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
 
 157.  Brodcasting Events
 
+            server (emit) -> client (recieve) --acknoledgement--> server
+
+            client (emit) -> server (recieve) --acknowledgement--> client
+
 158.  Sharing Your Location
 
             CHALLANGE: Share coordinates with other users
@@ -1722,3 +1726,19 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
                 socket.on('sendLocation', (coords) => {
                         io.emit('message', `Location: ${coords.latitude}, ${coords.longitude}`)
                     })
+
+159.  Event Acknoledgments
+
+            npm module for detecting bad words
+                npm i bad-words@3.0.0
+                    require in index :
+                        const Filter = require('bad-words')
+
+            CHALLANGE: Setup acknoledgement
+
+            1. Setup the client acknowledgment function
+            2. Setup the server to send back the acknoledegment
+            3. Have the client print "location shared!" when acknowledged
+            4. Test work!
+
+            SOLUTION:
