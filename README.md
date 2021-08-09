@@ -1810,3 +1810,5 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
             2. Use generateLocationMessage when server emits location message
             3. Update template to render time before the url
             4. Compile the template with the URL
+
+165.  Styling the chat app
