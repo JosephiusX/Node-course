@@ -1769,3 +1769,34 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
             3. Select the template form Javascript
             4. Render the template with the URL and append to messages list
             5. test your work
+
+163.  Working with Time
+
+            ways to get date:
+
+                if
+                    const now = new Date()
+                then
+
+                get date string
+                    now :
+                         Mon Aug 09 2021 13:31:19 GMT-0700 (Pacific Daylight Time) {}
+                    now.toString() :
+                         "Mon Aug 09 2021 13:31:19 GMT-0700 (Pacific Daylight Time)"
+
+                get the day of the montg
+                    now.getDate() :
+                        9
+
+                get the time in miliseconds
+                    now.getTime():
+                        1628541079436
+
+                in source mkdir utils
+                    in it touch messages.js
+
+
+            javascript dosent give us easy ways to format our timestamp when we recieve data
+
+            momentjs.com:
+                		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
