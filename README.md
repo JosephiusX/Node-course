@@ -1676,3 +1676,23 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
               <script src="/js/chat.js"></script>
 
 155.  Socket.io Events
+
+156.  Socket.io Events Challange
+
+            CHALLANGE: send a welcome message to new users
+            1. Have server emit "message" when new client connects
+                - Send "welcome!" as the event data
+            2. Have client listen for "message" event and print to console
+            3. Test your work!
+
+            CHALLANGE: Allow clients to send messages
+
+            1. Create a form with an input and button
+                -Similar to the weather form
+            2. Setup event listener for form submissions
+                -Emit "sendMessage" with input string as message data
+            3. Have server listen for "sendMessage"
+                -Send message to all connected clients
+            4. Test your work!
+
+157.  Brodcasting Events

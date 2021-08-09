@@ -3,5 +3,7 @@
 	"prettier.proseWrap": "never",
 	"prettier.singleQuote": true,
 	"prettier.tabWidth": 3,
-	"prettier.useTabs": true
+	"prettier.useTabs": true,
+	"javascript.format.insertSpaceBeforeAndAfterBinaryOperators": false,
+	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true
 }
