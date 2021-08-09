@@ -1749,3 +1749,5 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
             2. Disable the button just before getting the current position
             3. Enable the button in the acknowledgment callback
             4. Test work!
+
+161.  Rendering Messages
