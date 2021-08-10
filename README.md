@@ -1837,3 +1837,13 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
 168.  Storing Users: Part 1
 
             in utils touch users.js file
+
+169.  Storing Users: Part II
+
+            CHALLANGE: Create two new functions for users
+
+            1. Create getUser
+                - Accepting id and return user object (or undefined)
+            2. Create getUsersInRoom
+                - Accept room and return array of users (or array)
+            3. Test your work by calling the functions!
