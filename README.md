@@ -1812,3 +1812,11 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
             4. Compile the template with the URL
 
 165.  Styling the chat app
+
+166.  Join Page
+
+            in public touch chat.html
+
+            copy contents of index.html to chat.html
+
+            clear body of index.html and make a form with th action /chat.html
