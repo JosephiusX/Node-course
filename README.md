@@ -1833,3 +1833,7 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
 
             sending to everyone except a specific client
                 socket.broadcast.to.emit
+
+168.  Storing Users: Part 1
+
+            in utils touch users.js file
