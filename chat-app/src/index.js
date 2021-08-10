@@ -17,9 +17,12 @@ app.use(express.static(publicDirectoryPath))
 io.on('connection', (socket) => {
 	console.log('New websocket connection')
 
-	// emit to a user who is joining
-	socket.emit('message', generateMessage('Welcome!'))
-	socket.broadcast.emit('message', generateMessage('A new user has joined!')) // emit to everybody but that particular connection
+	socket.on('join', ({username, room}) => {
+		socket.join(room)
+
+		socket.emit('message', generateMessage('Welcome!')) // emit to a user who is joining
+		socket.broadcast.to(room).emit('message', generateMessage(`${username} has joined!`)) // emit to everybody but that particular connection
+	})
 
 	socket.on('sendMessage', (message, callback) => {
 		const filter = new Filter()
@@ -28,7 +31,7 @@ io.on('connection', (socket) => {
 			return callback('Profanity is not allowed!')
 		}
 
-		io.emit('message', generateMessage(message)) // send message to all other users
+		io.to('indiana').emit('message', generateMessage(message)) // send message to all other users
 		callback()
 	})
 

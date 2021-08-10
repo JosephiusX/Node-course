@@ -1820,3 +1820,16 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
             copy contents of index.html to chat.html
 
             clear body of index.html and make a form with th action /chat.html
+
+167.  Socket.io Rooms
+
+            this lesson uses the query string we imported in our scripts in chat.html
+
+            types of emits so far:
+                socket.emit, io.emit socket.broadcast.emit
+
+            now to send a message to everyone in a room:
+                io.to.emit
+
+            sending to everyone except a specific client
+                socket.broadcast.to.emit
