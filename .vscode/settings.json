@@ -1,10 +1,10 @@
 {
-	"prettier.printWidth": 300,
 	"prettier.proseWrap": "never",
 	"prettier.singleQuote": true,
 	"prettier.tabWidth": 3,
 	"prettier.useTabs": true,
 	"javascript.format.insertSpaceBeforeAndAfterBinaryOperators": false,
 	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
-	"prettier.bracketSpacing": false
+	"prettier.bracketSpacing": false,
+	"editor.mouseWheelZoom": true
 }
