@@ -1868,3 +1868,8 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
             4. test your work!
 
 172.  Rendering User List
+
+173.  Automatic scrolling
+
+             *** seems to be working but the second user stops autoscrolling after about 6 or 7 messages
+
