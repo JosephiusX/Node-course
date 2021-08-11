@@ -1851,3 +1851,18 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
 170.  Tracking Users joining and leaving
 
 171.  Sending Messages to Rooms
+
+            CHALLANGE: Send messages to correct room
+
+            1. Use getUser inside "sendMessage" event handler to get user data
+            2. Emit the message to their current room
+            3. Test your work!
+            4. Report for " sendLocation "
+
+            CHALLANGE: Render username for text messages
+
+            1.Setup the server to send username to client
+            2. Edit every call to "generateMessage" to include username
+                - Use "Admin" for sys messages like connect/welcome/disconnect
+            3. Update client to render username in template
+            4. test your work!
