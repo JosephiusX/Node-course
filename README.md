@@ -1866,3 +1866,5 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
                 - Use "Admin" for sys messages like connect/welcome/disconnect
             3. Update client to render username in template
             4. test your work!
+
+172.  Rendering User List

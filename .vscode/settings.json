@@ -7,7 +7,7 @@
 	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
 	"prettier.bracketSpacing": false,
 	"editor.mouseWheelZoom": true,
-	"editor.acceptSuggestionOnEnter": "off",
+	"editor.acceptSuggestionOnEnter": "smart",
 	"files.autoSave": "onFocusChange",
 	"editor.suggest.showWords": false
 }
