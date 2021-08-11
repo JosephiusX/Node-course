@@ -9,7 +9,9 @@ const $messages = document.querySelector('#messages')
 
 // Templates
 const messageTemplate = document.querySelector('#message-template').innerHTML
-const locationMessageTemplate = document.querySelector('#location-message-template').innerHTML
+const locationMessageTemplate = document.querySelector(
+	'#location-message-template'
+).innerHTML
 
 // Options
 const {username, room} = Qs.parse(location.search, {ignoreQueryPrefix: true}) // removes question mark form query string, destructure individyal priperties off that object
@@ -76,4 +78,9 @@ $sendLocationButton.addEventListener('click', () => {
 	})
 })
 
-socket.emit('join', {username, room})
+socket.emit('join', {username, room}, (error) => {
+	if (error) {
+		alert(error)
+		location.href = '/'
+	}
+})

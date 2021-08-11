@@ -6,5 +6,8 @@
 	"javascript.format.insertSpaceBeforeAndAfterBinaryOperators": false,
 	"javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
 	"prettier.bracketSpacing": false,
-	"editor.mouseWheelZoom": true
+	"editor.mouseWheelZoom": true,
+	"editor.acceptSuggestionOnEnter": "off",
+	"files.autoSave": "onFocusChange",
+	"editor.suggest.showWords": false
 }

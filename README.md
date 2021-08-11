@@ -1847,3 +1847,7 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
             2. Create getUsersInRoom
                 - Accept room and return array of users (or array)
             3. Test your work by calling the functions!
+
+170.  Tracking Users joining and leaving
+
+171.  Sending Messages to Rooms
