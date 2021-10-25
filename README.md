@@ -1293,7 +1293,7 @@ sec 15: Sending Emails (task app)
             initalize as git repo:
                 cd ..  task-manager
                 git init
-            **** above may be an issue because its already in a git repo.
+            ????  above may be an issue because its already in a git repo. ****** it wasent
 
             make sure git is not tracking config and node_modules with .gitignore file
 
@@ -1873,3 +1873,42 @@ section 17: 151. Section Intro: Realtime Web Applications with Socket.io
 
              *** seems to be working but the second user stops autoscrolling after about 6 or 7 messages
 
+174.  Deploying the Chat Application
+
+            CHALLANGE: Deploy the chat application
+
+            1. Setup Git and commit files
+                - Ignore node_modules folder
+            2. Setup a Github repository and push code up
+            3. Setup a Heroku app and push code up
+            4. Open the live app and test your work
+
+
+            SOLUTION:
+
+                cd chat-app
+                git init
+                place node_modules files in .gitignore
+                git add .
+                git commit -m "initial commit"
+                create repo in github
+                follow instructions for setting up remote repository
+                push to it
+                heroku create granville-chat-app:
+                    https://granville-chat-app.herokuapp.com/
+                git push heroku main:
+                    hopefully results in success after 30 seconds or so
+
+## Accomplishments
+
+Weather API
+
+    https://granville-weather-app.herokuapp.com/
+
+Task Manager API
+
+    https://granville-task-manager.herokuapp.com
+
+Chat App
+
+    https://granville-chat-app.herokuapp.com/
